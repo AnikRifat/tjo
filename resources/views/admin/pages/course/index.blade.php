@@ -12,7 +12,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="example5" class="display" style="min-width: 845px">
+                            <table id="example5" class="text-center display" style="min-width: 845px">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -43,6 +43,16 @@
                                         <td>{!! $course->overview !!}</td>
                                         <td>{{ $course->preview }}</td>
                                         <td>{{ $course->intro }}</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="{{ route('course.edit',$course->id) }}"
+                                                  class="btn btn-primary shadow btn-xs sharp me-1"><i
+                                                      class="fas fa-pencil-alt"></i></a>
+                                                <a href="#" class="btn btn-danger shadow btn-xs sharp"><i
+                                                      class="fa fa-trash"></i></a>
+                                            </div>
+                                        </td>
+
 
                                         @endforeach
 

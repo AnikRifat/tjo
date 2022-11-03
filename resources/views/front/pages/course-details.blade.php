@@ -30,30 +30,27 @@
 
     <div class="inner-banner">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-3">
-                    <h2>Sale up to 45%!</h2>
-                    <div class="timer">
-                        <div>
-                            <span class="days" id="day"></span>
-                            <div class="smalltext">Days</div>
-                        </div>
-                        <div>
-                            <span class="hours" id="hour"></span>
-                            <div class="smalltext">Hours</div>
-                        </div>
-                        <div>
-                            <span class="minutes" id="minute"></span>
-                            <div class="smalltext">Minutes</div>
-                        </div>
-                        <div>
-                            <span class="seconds" id="second"></span>
-                            <div class="smalltext">Seconds</div>
-                        </div>
-                        <p id="time-up"></p>
-                    </div>
+            <div class="countdown-container">
+                <div class="countdown-el days-c">
+                    <p class="big-text" id="day"></p>
+                    <span>Days</span>
+                </div>
+                <div class="countdown-el hours-c">
+                    <p class="big-text" id="hour"></p>
+                    <span>Hours</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="minute"></p>
+                    </p>
+                    <span>Minutes</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="second"></p>
+                    </p>
+                    <span>Second</span>
                 </div>
             </div>
+
         </div>
     </div>
 

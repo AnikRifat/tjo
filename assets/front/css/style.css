@@ -771,7 +771,7 @@ button.bg-danger:hover {
 .card {
     border: 1px solid #e9ecef;
     margin-bottom: 1.875rem;
-    border-radius: 0
+    border-radius: 10px;
 }
 
 .card-body {
@@ -1727,7 +1727,10 @@ html.menu-opened body {
 }
 
 .footer-contact-info img {
-    margin-right: 12px
+    margin-right: 12px;
+    margin-top: 1.2rem;
+    height: 1rem;
+    /* line-height: 0rem; */
 }
 
 .footer-contact-info .footer-address {
@@ -1815,12 +1818,14 @@ html.menu-opened body {
 }
 
 .home-slide {
+    padding: 2rem;
     position: relative;
-    background-image: url(../img/banner.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    min-height: 1000px
+    background-color: #f8f8f8;
+    /* background-image: url(../img/banner.png); */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* min-height: 500px; */
 }
 
 .section-header.section-head-one .sub-title {
@@ -1901,9 +1906,9 @@ html.menu-opened body {
 }
 
 .trust-user p {
-    font-size: 20px;
+    font-size: 1rem;
     color: #685f78;
-    font-weight: 500;
+    font-weight: 700;
     margin: 30px 0 10px
 }
 
@@ -2110,20 +2115,20 @@ html.menu-opened body {
 }
 
 .all-category .btn-primary {
-    color: #392c7d;
-    border: 3px solid #b4a7f5;
+    color: #000000;
+    border: 3px solid #efefef;
     backdrop-filter: blur(151.39px);
-    border-radius: 46.9159px;
+    /* border-radius: 5px; */
     background: 0 0;
-    border-radius: 46.9159px;
+    border-radius: 5px;
     min-width: 150px;
     padding: 10px 15px;
     font-weight: 500
 }
 
 .all-category .btn-primary:hover {
-    background-color: #917cf6;
-    border-color: #917cf6;
+    background-color: #000000;
+    border-color: #ffffff;
     color: #fff
 }
 
@@ -2161,6 +2166,7 @@ html.menu-opened body {
 }
 
 .course-full-width {
+    margin: 10px 0px;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2265,11 +2271,12 @@ html.menu-opened body {
 }
 
 .feature-icon {
+    background: #fff;
     margin-right: 15px;
     font-size: 30px;
-    width: 105px;
+    width: 110px;
     border-radius: 100px;
-    height: 105px;
+    height: 110px;
     display: flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -2394,7 +2401,7 @@ html.menu-opened body {
 }
 
 .product:hover {
-    background: #413655;
+    background: #f66a63;
     color: #fff;
     transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -2419,7 +2426,7 @@ html.menu-opened body {
 
 .product:hover .course-name h4 a:hover,
 .product:hover .product-content h3 a:hover {
-    color: #f66962
+    color: #ffffff;
 }
 
 .product:hover .rating-img img,
@@ -2466,7 +2473,7 @@ html.menu-opened body {
 }
 
 .product-content h3 a:hover {
-    color: #f66962
+    color: #000000;
 }
 
 .product-content .instructor-text {
@@ -3131,7 +3138,7 @@ html.menu-opened body {
 }
 
 [dir=rtl] .testimonial-four .slick-prev:before {
-    content: '→'
+    content: 'Ã¢â€ â€™'
 }
 
 .testimonial-four .slick-next:before {
@@ -3142,7 +3149,7 @@ html.menu-opened body {
 }
 
 [dir=rtl] .testimonial-four .slick-next:before {
-    content: '←'
+    content: 'Ã¢â€ Â'
 }
 
 .testimonial-all {
@@ -4814,8 +4821,8 @@ input[type=password]::-ms-clear {
     top: 50%;
     left: 50%;
     background: rgb(1 1 1/40%);
-    width: 90px;
-    height: 90px;
+    width: 40px;
+    height: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4831,8 +4838,8 @@ input[type=password]::-ms-clear {
 }
 
 .play-icon i {
-    font-size: 50px;
-    padding-left: 8px
+    font-size: 25px;
+    padding-left: 5px;
 }
 
 .course-fee {
@@ -4863,7 +4870,7 @@ input[type=password]::-ms-clear {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .76)
+    background-color: rgb(255 255 255 / 69%);
 }
 
 .inner-banner .container {
@@ -4883,7 +4890,7 @@ input[type=password]::-ms-clear {
 }
 
 .inner-banner p {
-    font-size: 14px
+    font-size: 30px;
 }
 
 .web-badge {
@@ -7408,7 +7415,7 @@ input[type=password]::-ms-clear {
 
 .countdown-el {
     text-align: center;
-    background: rgba(0, 0, 0, .4);
+    background: rgb(0 0 0 / 85%);
     min-width: 140px;
     padding: 38px 20px;
     border-radius: 10px;
@@ -14168,3 +14175,23 @@ input[type=password]::-ms-clear {
     height: 20rem;
     width: 100%;
 }
+
+.about-us .card-body {
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+section.section.about-us {
+    padding: 5rem 0rem;
+}
+
+img.img-fluid.video-thumb {
+    border-radius: 10px;
+}
+
+.feature-icon img {
+    width: 80px;
+    height: 80px;
+}
+

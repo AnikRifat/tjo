@@ -7,7 +7,7 @@
 
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{ asset('/') }}assets/front/img/logo.svg" alt="logo">
+                            <img src="{{ asset('/') }}assets/front/img/logo.png" alt="logo">
                         </div>
                         <div class="footer-about-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris
@@ -17,68 +17,57 @@
                     </div>
 
                 </div>
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-4 col-md-6">
 
                     <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">For Instructor</h2>
+                        <h2 class="footer-title">Links</h2>
                         <ul>
-                            <li><a href="instructor-profile.html">Profile</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="instructor-list.html">Instructor</a></li>
-                            <li><a href="deposit-instructor-dashboard.html"> Dashboard</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Courses</a></li>
+                            <li><a href="">How it works</a></li>
+                            <li><a href="">Testimmonial</a></li>
                         </ul>
                     </div>
 
                 </div>
-                <div class="col-lg-2 col-md-6">
 
-                    <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">For Student</h2>
-                        <ul>
-                            <li><a href="student-profile.html">Profile</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="students-list.html">Student</a></li>
-                            <li><a href="deposit-student-dashboard.html"> Dashboard</a></li>
-                        </ul>
-                    </div>
-
-                </div>
                 <div class="col-lg-4 col-md-6">
 
                     <div class="footer-widget footer-contact">
-                        <h2 class="footer-title">News letter</h2>
-                        <div class="news-letter">
-                            <form>
-                                <input type="text" class="form-control" placeholder="Enter your email address"
-                                  name="email">
-                            </form>
-                        </div>
-                        <div class="footer-contact-info">
-                            <div class="footer-address">
-                                <img src="{{ asset('/') }}assets/front/img/icon/icon-20.svg" alt="" class="img-fluid">
-                                <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
-                            </div>
-                            <p>
-                                <img src="{{ asset('/') }}assets/front/img/icon/icon-19.svg" alt="" class="img-fluid">
-                                <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
-                                  data-cfemail="d9bdabbcb8b4aab5b4aa99bca1b8b4a9b5bcf7bab6b4">[email&#160;protected]</a>
-                            </p>
-                            <p class="mb-0">
-                                <img src="{{ asset('/') }}assets/front/img/icon/icon-21.svg" alt="" class="img-fluid">
-                                +19 123-456-7890
-                            </p>
-                        </div>
-                    </div>
 
+                        <div class="footer-contact-info">
+                            {{-- <div class="footer-address">
+                                <img src="{{ asset('/') }}assets/front/img/icon/icon-20.svg" alt="" class="img-fluid">
+                            <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
+                        </div> --}}
+                        <p>
+                            <img src="{{ asset('/') }}assets/front/img/icon/icon-19.svg" alt="" class="img-fluid">
+                            <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection"
+                              class="__cf_email__"
+                              data-cfemail="teacherjackonline@gmail.com">teacherjackonline@gmail.com</a>
+                        </p>
+                        <p class="mb-0">
+                            <img src="{{ asset('/') }}assets/front/img/icon/icon-21.svg" alt="" class="img-fluid">
+                            1.214.736.5989
+                        </p>
+                        <p class="mb-0">
+                            <img src="{{ asset('/') }}assets/front/img/icon/skype.svg" alt="" class="img-fluid">
+                            ABAACORP LTD
+                        </p>
+                        <p class="mb-0">
+                            <img src="{{ asset('/') }}assets/front/img/icon/wechat.svg" alt="" class="img-fluid">
+                            Jack2147365989
+                        </p>
+                        <p class="mb-0">
+                            <img src="{{ asset('/') }}assets/front/img/icon/qq.svg" alt="" class="img-fluid">
+                            3396883165
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
-
-
     <div class="footer-bottom">
         <div class="container">
 
@@ -94,7 +83,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="copyright-text">
-                            <p class="mb-0">&copy; 2022 DreamsLMS. All rights reserved.</p>
+                            <p class="mb-0">© 2022 Abaacorp LTD. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -102,5 +91,7 @@
 
         </div>
     </div>
+    </div>
+
 
 </footer>
