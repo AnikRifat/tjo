@@ -175,7 +175,7 @@
                                                 <img src="{{ asset('/') }}assets/front/img/proccess/1.png" alt="">
                                             </div>
                                             <div class="feature-cont">
-                                                <div class="feature-text">Angular Development</div>
+                                                <div class="feature-text">Get a Schedule</div>
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@
                                                 <img src="{{ asset('/') }}assets/front/img/proccess/2.png" alt="">
                                             </div>
                                             <div class="feature-cont">
-                                                <div class="feature-text">Angular Development</div>
+                                                <div class="feature-text">Fix a TIme</div>
                                             </div>
                                         </div>
                                     </div>
@@ -203,7 +203,7 @@
                                                 <img src="{{ asset('/') }}assets/front/img/proccess/3.png" alt="">
                                             </div>
                                             <div class="feature-cont">
-                                                <div class="feature-text">Angular Development</div>
+                                                <div class="feature-text">Make payment</div>
                                             </div>
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@
                                                 <img src="{{ asset('/') }}assets/front/img/proccess/4.png" alt="">
                                             </div>
                                             <div class="feature-cont">
-                                                <div class="feature-text">Angular Development</div>
+                                                <div class="feature-text">Attend Class</div>
                                             </div>
                                         </div>
                                     </div>
