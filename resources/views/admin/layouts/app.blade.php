@@ -44,13 +44,13 @@
         <!--*******************
         Preloader start
     ********************-->
-        <div id="preloader">
+        {{-- <div id="preloader">
             <div class="sk-three-bounce">
                 <div class="sk-child sk-bounce1"></div>
                 <div class="sk-child sk-bounce2"></div>
                 <div class="sk-child sk-bounce3"></div>
             </div>
-        </div>
+        </div> --}}
         <!--*******************
         Preloader end
     ********************-->
@@ -122,7 +122,8 @@
           type="text/javascript"></script>
         <script src="{{ asset('/') }}assets/admin/vendor/chart.js/Chart.bundle.min.js" type="text/javascript"></script>
         <script src="{{ asset('/') }}assets/admin/vendor/peity/jquery.peity.min.js" type="text/javascript"></script>
-        <script src="{{ asset('/') }}assets/admin/vendor/apexchart/apexchart.js" type="text/javascript"></script>
+        {{-- <script src="{{ asset('/') }}assets/admin/vendor/apexchart/apexchart.js" type="text/javascript"></script>
+        --}}
         <script src="{{ asset('/') }}assets/admin/vendor/owl-carousel/owl.carousel.js" type="text/javascript"></script>
         <script src="{{ asset('/') }}assets/admin/js/dashboard/dashboard-1.js" type="text/javascript"></script>
         <script src="{{ asset('/') }}assets/admin/js/custom.js" type="text/javascript"></script>
@@ -134,6 +135,41 @@
         </script>
         <script src="{{ asset('/') }}assets/admin/js/plugins-init/datatables.init.js" type="text/javascript"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.5/sweetalert2.all.min.js"
+          integrity="sha512-Ne7tFIuQ9TY6PXjMLKcfZlOnBLUVmLW0YDUV1h1wp+Qr5Fe0EoqHh242XT+GbX/tcXsbnVALt/zF6ouJaKa91w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+        @if ($massage = Session::get('success'))
+        <script>
+            Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "{{ $massage }}",
+          showConfirmButton: !1,
+          timer: 3000
+          })
+          Swal();
+        </script>
+        @endif
+
+
+        @if ($massage = Session::get('error'))
+        <script>
+            Swal.fire({
+        position: "top-end",
+        icon: "Error",
+        title: "{{ $massage }}",
+        showConfirmButton: !1,
+        timer: 3000
+        })
+        Swal();
+        </script>
+        @endif
+
+
+        @yield('script')
         <script>
             ClassicEditor
         .create( document.querySelector( '#editor' ) )
@@ -142,6 +178,7 @@
         } );
         </script>
         {{-- <script src="{{ asset('/') }}assets/admin/js/styleSwitcher.js" type="text/javascript"></script> --}}
+
     </body>
 
 </html>

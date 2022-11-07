@@ -3,13 +3,12 @@
 <div class="main-body">
 
     <div class="card">
-        <h4 class="card-header">Course</h4>
+        <h4 class="card-header">campaign</h4>
         <div class="card-body">
             <div class="row">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('course.create') }}" class="btn btn-primary">+ Add Course</a>
-
+                        <a href="{{ route('campaign.create') }}" class="btn btn-primary">+ Add Campaign</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -17,8 +16,8 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Course ID</th>
-                                        <th>Title</th>
+                                        <th>campaign ID</th>
+                                        <th>Name</th>
                                         <th>Total Duration</th>
                                         <th>Total Classes</th>
                                         <th>Image</th>
@@ -30,36 +29,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($courses as $course)
+                                    @foreach ($campaigns as $campaign)
                                     <tr>
-                                        <td>{{ $course->id }}</td>
-                                        <td>{{ $course->course_id }}</td>
-                                        <td>{{ $course->title }}</td>
-                                        <td>{{ $course->duration }}</td>
-                                        <td>{{ $course->classes }}</td>
-                                        <td><img src="{{ asset('/') }}assets/images/course/{{ $course->image }}"
+                                        <td>{{ $campaign->id }}</td>
+                                        <td>{{ $campaign->campaign_id }}</td>
+                                        <td>{{ $campaign->name }}</td>
+                                        <td><img
+                                              src="{{ asset('/') }}assets/images/thumbnail/{{ $campaign->thumbnail }}"
                                               class="img-fluid" alt=""></td>
-                                        <td><img src="{{ asset('/') }}assets/images/course/{{ $course->cover_image }}"
-                                              class="img-fluid" alt=""></td>
-                                        <td>{!! $course->overview !!}</td>
-                                        <td>{{ $course->preview }}</td>
-                                        <td>{{ $course->intro }}</td>
+                                        <td>{{ $campaign->discount  }}</td>
+                                        <td>{{ $campaign->start_date  }}</td>
+                                        <td>{{ $campaign->end_date  }}</td>
+                                        <td>{{ $campaign->type }}</td>
                                         <td>
                                             <div class="d-flex">
-                                                <a href="{{ route('course.edit',$course->id) }}"
+                                                <a href="{{ route('campaign.edit',$campaign->id) }}"
                                                   class="btn btn-primary shadow btn-xs sharp me-1"><i
                                                       class="fas fa-pencil-alt"></i></a>
-                                                <form action="{{ route('course.destroy',$course->id) }}"
-                                                  id="form{{ $course->id }}" method="get">
+                                                <form action="{{ route('campaign.destroy',$campaign->id) }}"
+                                                  id="form{{ $campaign->id }}" method="get">
                                                     @csrf
                                                 </form>
                                                 <button class="btn btn-danger shadow btn-xs sharp"
-                                                  onclick="deleteItem({{ $course->id }});"><i
+                                                  onclick="deleteItem({{ $campaign->id }});"><i
                                                       class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
-
-
                                         @endforeach
 
 

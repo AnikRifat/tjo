@@ -64,7 +64,7 @@ class CourseController extends Controller
         if (Course::create($input)) {
             return redirect()->route('course.index')->with('success', 'course added successfully.');
         } else {
-            return back()->with('error', 'course added successfully.');
+            return back()->with('error', 'error.');
         }
     }
 
@@ -109,6 +109,12 @@ class CourseController extends Controller
         } else {
             unset($input['image']);
         }
+
+        if ($course->update($input)) {
+            return redirect()->route('course.index')->with('success', 'course edited successfully.');
+        } else {
+            return back()->with('error', 'Error.');
+        }
     }
 
     /**
@@ -119,6 +125,10 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        if ($course->delete()) {
+            return redirect()->route('course.index')->with('success', 'course Deleted successfully.');
+        } else {
+            return back()->with('error', 'Error.');
+        }
     }
 }
