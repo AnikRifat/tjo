@@ -13,5 +13,6 @@
 <script src="{{ asset('/') }}assets/front/plugins/slick/slick.js"></script>
 
 <script src="{{ asset('/') }}assets/front/plugins/aos/aos.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<script src="{{ asset('/') }}assets/front/js/firebase.js" type="module"></script>
 <script src="{{ asset('/') }}assets/front/js/script.js"></script>

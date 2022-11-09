@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,14 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.index');
-});
-Route::get('/course-details', function () {
-    return view('front.pages.course-details');
-});
-Route::prefix('admin')->group(function () {
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/course-details/{course}', [HomeController::class, 'courseDetails'])->name('course.details');
+Route::get('/campaign-details/{campaign}', [HomeController::class, 'campaignDetails'])->name('campaign.details');
 
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', [HomeController::class, 'admin'])->name('admin.index');
     //Course-ROutes
 
     Route::prefix('course')->group(function () {

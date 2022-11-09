@@ -18,13 +18,14 @@
                                         <th>ID</th>
                                         <th>campaign ID</th>
                                         <th>Name</th>
-                                        <th>Total Duration</th>
-                                        <th>Total Classes</th>
-                                        <th>Image</th>
-                                        <th>Cover Image</th>
-                                        <th>overview</th>
-                                        <th>Preview</th>
-                                        <th>intro</th>
+                                        <th>Thumbnail</th>
+                                        <th>price</th>
+                                        <th>Discount</th>
+                                        <th>Discounted price</th>
+                                        <th>Discount Avibility</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Type</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -32,15 +33,17 @@
                                     @foreach ($campaigns as $campaign)
                                     <tr>
                                         <td>{{ $campaign->id }}</td>
-                                        <td>{{ $campaign->campaign_id }}</td>
+                                        <td>{{ $campaign->course_id }}</td>
                                         <td>{{ $campaign->name }}</td>
-                                        <td><img
-                                              src="{{ asset('/') }}assets/images/thumbnail/{{ $campaign->thumbnail }}"
+                                        <td><img src="{{ asset('/') }}assets/images/course/{{ $campaign->thumbnail }}"
                                               class="img-fluid" alt=""></td>
+                                        <td>{{ $campaign->price  }}</td>
                                         <td>{{ $campaign->discount  }}</td>
+                                        <td>{{ $campaign->discounted_price  }}</td>
+                                        <td>{{ $campaign->hasdiscount  }}</td>
                                         <td>{{ $campaign->start_date  }}</td>
                                         <td>{{ $campaign->end_date  }}</td>
-                                        <td>{{ $campaign->type }}</td>
+                                        <td>{{ $campaign->type  }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{ route('campaign.edit',$campaign->id) }}"

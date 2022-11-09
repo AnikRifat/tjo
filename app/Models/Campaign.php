@@ -11,6 +11,8 @@ class Campaign extends Model
     protected $fillable = [
         'course_id',
         'name',
+        'price',
+        'discounted_price',
         'thumbnail',
         'discount',
         'start_date',
@@ -18,4 +20,9 @@ class Campaign extends Model
         'type',
         'hasDiscount',
     ];
+
+    public function course()
+    {
+        return $this->hasOne(Course::class, 'course_id', 'course_id');
+    }
 }

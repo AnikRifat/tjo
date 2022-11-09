@@ -3,69 +3,71 @@
 <div class="main-body">
 
     <div class="card">
-        <h4 class="card-header">Create campaign</h4>
+        <h4 class="card-header">Edit campaign</h4>
         <div class="card-body">
             <div class="row">
                 <div class="basic-form">
-                    <form action="{{ route('campaign.update',$campaign->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('campaign.update',$campaign->id) }}" method="POST"
+                      enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
-                            <label for="title" class="form-label">Title <b class="text-danger">*</b>:</label>
-                            <input required type="text" class="form-control input-default " name="title"
-                              placeholder="Type Here ... " value="{{ $campaign->title }}">
+                            <label for="name" class="form-label">name <b class="text-danger">*</b>:</label>
+                            <input required type="text" class="form-control input-default " name="name"
+                              placeholder="Type Here ... " value="{{ $campaign->name }}">
                         </div>
                         <div class="mb-3">
-                            <label for="image" class="form-label">image <b class="text-danger">*</b>:</label>
+                            <label class="me-sm-2">Course <b class="text-danger">*</b>:</label>
+                            <select class="me-sm-2 default-select form-control wide" name="course_id"
+                              id="inlineFormCustomSelect">
+                                <option selected>Select One </option>
+                                @foreach ($courses as $item)
+                                <option value="{{ $item->course_id }}">{{ $item->title }}</option>
+                                @endforeach
+
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="thumbnail" class="form-label">thumbnail <b class="text-danger">*</b>:</label>
                             <canvas id="canv1"></canvas>
-                            <input type="file" class="form-file-input form-control " name="image"
+                            <input required type="file" class="form-file-input form-control " name="thumbnail"
                               placeholder="Type Here ... " multiple="false" accept="image/*" id=finput1
                               onchange="upload()">
                         </div>
                         <div class="mb-3">
-                            <label for="cover_image" class="form-label">Cover Image <b
-                                  class="text-danger">*</b>:</label>
-                            <canvas id="canv2"></canvas>
+                            <label for="discount" class="form-label">discount <b class="text-danger">*(give only
+                                    number)</b>:</label>
+                            <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                <input type="checkbox" class="form-check-input" @if ($campaign->hasdiscount == 'on')
+                                checked
+                                @endif id="check" name="hasdiscount">
 
-                            <input type="file" class="form-file-input form-control " name="cover_image"
-                              placeholder="Type Here ... " multiple="false" accept="image/*" id=finput2
-                              onchange="upload2()">
+                            </div>
+                            <input type="text" class="form-control input-default " name="discount" placeholder="e.g 45"
+                              value="{{ $campaign->discount }}">
                         </div>
                         <div class="mb-3">
-                            <label for="prerview" class="form-label">Prerview <b class="text-danger">*</b>:</label>
-                            <textarea type="text" class="form-control input-default " name="prerview"
-                              placeholder="Type Here ... " value="{{ $campaign->preview }}"></textarea>
+                            <label for="start_date" class="form-label">start_date <b class="text-danger">*</b>:</label>
+                            <input type="date" name="start_date" class="datepicker-default form-control" id="start_date"
+                              value="{{ $campaign->start_date }}">
                         </div>
                         <div class="mb-3">
-                            <label for="intro" class="form-label">Intro <b class="text-danger">*</b>:</label>
-                            <input required type="text" class="form-control input-default " name="intro"
-                              placeholder="Type Here ... " value="{{ $campaign->intro }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="overview" class="form-label">overview <b class="text-danger">*</b>:</label>
-                            <textarea id="editor" name="overview" value="">{!! $campaign->overview !!}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="duration" class="form-label">Duration <b class="text-danger">*</b>:</label>
-                            <input required type="text" class="form-control input-default " name="duration"
-                              placeholder="Type Here ... " value="{{ $campaign->duration }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="classes" class="form-label">Total classes <b class="text-danger">*</b>:</label>
-                            <input required type="text" class="form-control input-default " name="classes"
-                              placeholder="Type Here ... " value="{{ $campaign->classes }}">
+                            <label for="end_date" class="form-label">end_date <b class="text-danger">*</b>:</label>
+                            <input type="date" name="end_date" class="datepicker-default form-control" id="end_date"
+                              value="{{ $campaign->end_date }}">
                         </div>
                         <div class="mb-3">
                             <label class="me-sm-2">Type <b class="text-danger">*</b>:</label>
                             <select class="me-sm-2 default-select form-control wide" name="type"
                               id="inlineFormCustomSelect">
-                                <option value="1" @if ( $campaign->classess == 1)
+                                <option value="1" @if ($campaign->type == 1)
+                                    selected
+                                    @endif>Live Class</option>
+                                <option value="0" @if ($campaign->type == 0)
                                     selected
                                     @endif
-                                    >One</option>
-                                <option value="0" @if ( $campaign->classess == 0)
-                                    selected
-                                    @endif>Two</option>
+                                    >Pre Recorded</option>
 
                             </select>
                         </div>

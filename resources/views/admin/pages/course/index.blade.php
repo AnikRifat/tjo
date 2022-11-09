@@ -41,7 +41,7 @@
                                               class="img-fluid" alt=""></td>
                                         <td><img src="{{ asset('/') }}assets/images/course/{{ $course->cover_image }}"
                                               class="img-fluid" alt=""></td>
-                                        <td>{!! $course->overview !!}</td>
+                                        <td>{!! Str::limit($course->overview, 50) !!}</td>
                                         <td>{{ $course->preview }}</td>
                                         <td>{{ $course->intro }}</td>
                                         <td>

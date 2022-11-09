@@ -111,11 +111,9 @@
             </div>
             <div class="course-widget">
                 <div class="row">
+                    @foreach ($courses as $item)
                     @include('front.components.course-simple')
-                    @include('front.components.course-simple')
-                    @include('front.components.course-simple')
-                    @include('front.components.course-simple')
-                    @include('front.components.course-simple')
+                    @endforeach
                     <div class="col-lg-6 col-md-12">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos aos-init aos-animate"
@@ -144,12 +142,10 @@
             </div>
 
             <div class="owl-carousel trending-course owl-theme aos" data-aos="fade-up">
+                @foreach ($campaigns as $item)
+                @include('front.components.course-card')
+                @endforeach
 
-                @include('front.components.course-card')
-                @include('front.components.course-card')
-                @include('front.components.course-card')
-                @include('front.components.course-card')
-                @include('front.components.course-card')
             </div>
 
         </div>

@@ -1,4 +1,9 @@
 @extends('front.master.app')
+@section('style')
+
+
+
+@endsection
 @section('main-body')
 <div class="main-body">
 
@@ -12,12 +17,39 @@
                                 <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
                                 <li class="breadcrumb-item" aria-current="page">Courses</li>
                                 <li class="breadcrumb-item" aria-current="page">All Courses</li>
-                                <li class="breadcrumb-item" aria-current="page">{{ $course->title }}</li>
+                                <li class="breadcrumb-item" aria-current="page">{{ $campaign->name }}</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+    <div class="inner-banner">
+        <div class="container">
+            <div class="countdown-container">
+                <div class="countdown-el days-c">
+                    <p class="big-text" id="day"></p>
+                    <span>Days</span>
+                </div>
+                <div class="countdown-el hours-c">
+                    <p class="big-text" id="hour"></p>
+                    <span>Hours</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="minute"></p>
+                    </p>
+                    <span>Minutes</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="second"></p>
+                    </p>
+                    <span>Second</span>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -45,7 +77,9 @@
                                                 </a>
                                                 <div class="video-details">
                                                     <div class="course-fee">
-                                                        <h3>${{ $course->price }}</h3>
+                                                        <h2>${{ $campaign->discounted_price }}</h2>
+                                                        <p><span>${{ $course->price }}</span> {{ $course->discount }}%
+                                                            off</p>
                                                     </div>
 
                                                     <a href="checkout.html" class="btn btn-enroll w-100">Enroll Now</a>
@@ -105,11 +139,13 @@
     </section>
 
 </div>
+
 @endsection
 
 @section('script')
 <script>
-    var deadline = new Date("november 15, 2022 15:37:25").getTime();
+    // var end_date =
+    var deadline = new Date("{{ $campaign->end_date }}").getTime();
 var x = setInterval(function() {
    var currentTime = new Date().getTime();
    var t = deadline - currentTime;

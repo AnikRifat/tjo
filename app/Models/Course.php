@@ -12,6 +12,7 @@ class Course extends Model
 
         'course_id',
         'title',
+        'price',
         'image',
         'cover_image',
         'overview',
@@ -22,4 +23,8 @@ class Course extends Model
         'classes',
         'type',
     ];
+    public function campaign()
+    {
+        return $this->belongsTo(Campaign::class, 'course_id', 'course_id');
+    }
 }

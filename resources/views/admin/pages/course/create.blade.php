@@ -30,8 +30,8 @@
                               onchange="upload2()">
                         </div>
                         <div class="mb-3">
-                            <label for="prerview" class="form-label">Prerview <b class="text-danger">*</b>:</label>
-                            <textarea type="text" class="form-control input-default " name="prerview"
+                            <label for="preview" class="form-label">Preview <b class="text-danger">*</b>:</label>
+                            <textarea type="text" class="form-control input-default " name="preview"
                               placeholder="Type Here ... "></textarea>
                         </div>
                         <div class="mb-3">

@@ -44,6 +44,17 @@
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
+                    <span class="nav-text">Campaign</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('campaign.create') }}">Add Campaign</a></li>
+                    <li><a href="{{ route('campaign.index') }}">View Campaign</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-144-layout"></i>
                     <span class="nav-text">Students</span>
                 </a>
                 <ul aria-expanded="false">
