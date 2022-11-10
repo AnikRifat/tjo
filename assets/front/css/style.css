@@ -2552,7 +2552,7 @@ html.menu-opened body {
 }
 
 .master-skill {
-    padding: 80px 0 0
+    margin: 300px 0 0;
 }
 
 .blur-border {
@@ -14198,4 +14198,3 @@ img.img-fluid.video-thumb {
 img.top-ic {
     width: 1.2rem;
 }
-
