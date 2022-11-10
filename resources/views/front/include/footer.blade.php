@@ -43,24 +43,23 @@
                         <p>
                             <img src="{{ asset('/') }}assets/front/img/icon/icon-19.svg" alt="" class="img-fluid">
                             <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection"
-                              class="__cf_email__"
-                              data-cfemail="teacherjackonline@gmail.com">teacherjackonline@gmail.com</a>
+                              class="__cf_email__" data-cfemail="teacherjackonline@gmail.com">{{ $contact->email }}</a>
                         </p>
                         <p class="mb-0">
                             <img src="{{ asset('/') }}assets/front/img/icon/icon-21.svg" alt="" class="img-fluid">
-                            1.214.736.5989
+                            {{ $contact->phone }}
                         </p>
                         <p class="mb-0">
                             <img src="{{ asset('/') }}assets/front/img/icon/skype.svg" alt="" class="img-fluid">
-                            ABAACORP LTD
+                            {{ $contact->skype }}
                         </p>
                         <p class="mb-0">
                             <img src="{{ asset('/') }}assets/front/img/icon/wechat.svg" alt="" class="img-fluid">
-                            Jack2147365989
+                            {{ $contact->wechat }}
                         </p>
                         <p class="mb-0">
                             <img src="{{ asset('/') }}assets/front/img/icon/qq.svg" alt="" class="img-fluid">
-                            3396883165
+                            {{ $contact->qq }}
                         </p>
                     </div>
                 </div>

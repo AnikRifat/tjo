@@ -99,6 +99,13 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
+        $request->validate([
+            "title" => 'required',
+            "prerview" => 'required',
+            "intro" => 'required',
+            "duration" => 'required',
+            "classes" => 'required',
+        ]);
         $input = $request->all();
 
         if ($image = $request->file('image')) {

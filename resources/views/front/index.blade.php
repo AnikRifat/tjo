@@ -10,19 +10,17 @@
                     <div class="home-slide-face aos" data-aos="fade-up">
                         <div class="home-slide-text ">
                             {{-- <h5>The Leader in Online Learning</h5> --}}
-                            <h1>Learn English The American Way</h1>
+                            <h1>{{ $content->title }}</h1>
                         </div>
 
                         <div class="trust-user">
-                            <p class="text-small">Take Lessons from Teacher Jack and
-                                Speak Like
-                                a Native English Speaker</p>
+                            <p class="text-small">{{ $content->sub_title }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
                     <div class="girl-slide-img aos" data-aos="fade-up">
-                        <img src="{{ asset('/') }}assets/front/img/object.png" alt="">
+                        <img src="{{ asset('/') }}assets/images/content/{{ $content->image }}" alt="">
                     </div>
                 </div>
             </div>

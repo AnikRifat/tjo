@@ -3,7 +3,7 @@
 <title>Teacher Jack</title>
 
 
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}assets/front/img/logo.png">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}assets/images/content/{{ $content->favicon }}">
 
 <link rel="stylesheet" href="{{ asset('/') }}assets/front/css/bootstrap.min.css">
 

@@ -52,17 +52,31 @@
 
                 </ul>
             </li>
+
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-144-layout"></i>
+                    <span class="nav-text">Testimonial</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('testimonial.create') }}">create testimonial</a></li>
+                    <li><a href="{{ route('testimonial.index') }}">View testimonial</a></li>
+
+                </ul>
+            </li>
+
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
                     <span class="nav-text">Website</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('campaign.create') }}">Content</a></li>
-                    <li><a href="{{ route('campaign.index') }}">View Campaign</a></li>
+                    <li><a href="{{ route('content.index') }}">Content</a></li>
+                    <li><a href="{{ route('contact.index') }}">contact</a></li>
 
                 </ul>
             </li>
+
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
