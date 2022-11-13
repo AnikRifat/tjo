@@ -19,8 +19,8 @@
                                         <th>ID</th>
                                         <th>name</th>
                                         <th>title</th>
-                                        <th>image</th>
                                         <th>text</th>
+                                        <th>image</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
