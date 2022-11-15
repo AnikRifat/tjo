@@ -10,7 +10,7 @@
                     <div class="home-slide-face aos" data-aos="fade-up">
                         <div class="home-slide-text ">
                             {{-- <h5>The Leader in Online Learning</h5> --}}
-                            <h1>{{ $content->title }}</h1>
+                            <h1>{!! $content->title !!}</h1>
                         </div>
 
                         <div class="trust-user">
@@ -38,15 +38,19 @@
                         </div>
                     </div>
                     <div class="section-text aos aos-init aos-animate" data-aos="fade-up">
-                        <p>Teacher Jack is experienced and has taught students from various countries over the past 7
-                            years,
-                            including China, South Korea, Mexico and the United States of America. Teacher Jack is
-                            friendly,
-                            helpful, open minded and affordable. He goes the extra mile to ensure student understanding
-                            of
-                            the lessons. He travels a lot and interacts with people from different background. He is
-                            knowledgeable and knows exactly which student requires what level of training. He is easily
-                            reachable and is always ready to help his students</p>
+                        <p>TESOL Certified, ELT Teacher Jack is experienced and has taught students from China, South
+                            Korea, Mexico and the United States of America over the last 7 years.
+                            <br>
+                            <br>
+                            Teacher Jack is friendly, helpful, open minded and affordable. He goes the extra mile to
+                            ensure student understanding of the lessons. He travels a lot and interacts with people from
+                            different background.
+                            <br>
+                            <br>
+
+                            He is knowledgeable and knows exactly which student requires what level of training. He is
+                            easily reachable and is always ready to help his students.
+                        </p>
                     </div>
 
                 </div>
@@ -325,7 +329,7 @@
         </div>
     </section>
 
-    @include('front.include.footer')
+
 
 </div>
 @endsection

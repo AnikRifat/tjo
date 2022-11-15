@@ -2,45 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Campaign;
-use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function Index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $courses = Course::all();
-        $campaigns = Campaign::all();
-        return view('front.index', compact('courses', 'campaigns'));
+        $this->middleware('auth');
     }
-    public function admin()
-    {
-        return view('admin.index');
-    }
-
-
 
     /**
-     * Display the specified resource.
+     * Show the application dashboard.
      *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function courseDetails(Course $course)
+    public function index()
     {
-        return view('front.pages.course-details', compact('course'));
-    }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Campaign  $campaign
-     * @return \Illuminate\Http\Response
-     */
-    public function campaignDetails(Campaign $campaign)
-    {
-        $course = Course::where('course_id', $campaign->course_id)->first();
-        // dd($course);
-        return view('front.pages.campaign-details', compact('campaign', 'course'));
+        return redirect()->route('user.index');
+        // return view('home');
     }
 }

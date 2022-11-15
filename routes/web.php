@@ -4,8 +4,10 @@ use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\TestimonialController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +21,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/course-details/{course}', [HomeController::class, 'courseDetails'])->name('course.details');
-Route::get('/campaign-details/{campaign}', [HomeController::class, 'campaignDetails'])->name('campaign.details');
+Route::get('/', [PublicController::class, 'index'])->name('index');
+Route::get('/404', [PublicController::class, 'error'])->name('error-access');
+Route::get('/course-details/{course}', [PublicController::class, 'courseDetails'])->name('course.details');
+Route::get('/campaign-details/{campaign}', [PublicController::class, 'campaignDetails'])->name('campaign.details');
 
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', [HomeController::class, 'admin'])->name('admin.index');
+Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('user.index');
+});
+
+
+
+
+
+Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
+    Route::get('/', [PublicController::class, 'admin'])->name('admin.index');
     //Course-ROutes
 
     Route::prefix('course')->group(function () {
@@ -69,3 +80,6 @@ Route::prefix('admin')->group(function () {
         Route::put('/content/update/{content}', [ContentController::class, 'update'])->name('content.update');
     });
 });
+
+Auth::routes();
+

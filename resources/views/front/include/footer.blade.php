@@ -1,6 +1,6 @@
 <footer class="footer">
 
-    <div class="footer-top aos" data-aos="fade-up">
+    <div class="footer-top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">

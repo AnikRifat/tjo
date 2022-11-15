@@ -12,6 +12,8 @@
             @include('front.include.header')
             @yield('main-body')
         </div>
+        @include('front.include.footer')
+
         @include('front.include.script')
         @yield('script')
     </body>

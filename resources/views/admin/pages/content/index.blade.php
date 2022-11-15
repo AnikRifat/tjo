@@ -19,8 +19,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="title" class="form-label">title <b class="text-danger">*</b>:</label>
-                            <input required type="text" class="form-control input-default " name="title"
-                              placeholder="Type Here ... " value="{{ $content->title }}">
+                            <textarea id="editor" name="title">{!! $content->title !!}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="sub_title" class="form-label">sub title <b class="text-danger">*</b>:</label>
