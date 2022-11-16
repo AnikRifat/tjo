@@ -102,7 +102,12 @@
         </div>
     </section>
     <section class="category">
+
         <div class="container">
+            <div class="section-sub-head py-3 text-center">
+
+                <h2>Courses</h2>
+            </div>
             <div class="row">
                 @foreach ($categories as $item)
                 <div class="col-md-4">

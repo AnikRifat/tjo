@@ -119,7 +119,7 @@ class CampaignController extends Controller
 
         if ($image = $request->file('thumbnail')) {
             $filePath = 'assets/images/course/';
-            $setImage = date('YmdHis') . "_course_thumbnail" . "." . $image->getClientOriginalExtension();
+            $setImage = $campaign->thumbnail;
             $image->move($filePath, $setImage);
             $input['thumbnail'] = $setImage;
         } else {

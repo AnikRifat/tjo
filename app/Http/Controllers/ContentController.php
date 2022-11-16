@@ -78,7 +78,7 @@ class ContentController extends Controller
         $input = $request->all();;
         if ($image = $request->file('image')) {
             $filePath = 'assets/images/content/';
-            $setImage = date('YmdHis') . "_image" . "." . $image->getClientOriginalExtension();
+            $setImage = $content->image;
             $image->move($filePath, $setImage);
             $input['image'] = $setImage;
         } else {
@@ -86,7 +86,7 @@ class ContentController extends Controller
         }
         if ($image = $request->file('logo')) {
             $filePath = 'assets/images/content/';
-            $setImage = date('YmdHis') . "_logo" . "." . $image->getClientOriginalExtension();
+            $setImage = $content->logo;
             $image->move($filePath, $setImage);
             $input['logo'] = $setImage;
         } else {
@@ -94,7 +94,7 @@ class ContentController extends Controller
         }
         if ($image = $request->file('favicon')) {
             $filePath = 'assets/images/content/';
-            $setImage = date('YmdHis') . "_favicon" . "." . $image->getClientOriginalExtension();
+            $setImage = $content->favicon;
             $image->move($filePath, $setImage);
             $input['favicon'] = $setImage;
         } else {
