@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Campaign;
+use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,24 @@ class PublicController extends Controller
     {
         return view('error-access');
     }
-
+    public function categoryCourse($id)
+    {
+        $category = Category::find($id);
+        // dd($category);
+        $catcourses = Course::where('category_id', $category->id)->get();
+        // dd($courses);
+        return view('front.pages.courses', compact('catcourses', 'category'));
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Campaign  $campaign
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Campaign $campaign)
+    {
+        //
+    }
 
     /**
      * Display the specified resource.
@@ -32,6 +50,7 @@ class PublicController extends Controller
      */
     public function courseDetails(Course $course)
     {
+        // $iscampaign = Campaign::where('course_id', $course->id);
         return view('front.pages.course-details', compact('course'));
     }
     /**

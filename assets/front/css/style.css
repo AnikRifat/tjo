@@ -2220,14 +2220,15 @@ html.menu-opened body {
     z-index: 9;
     width: 100%;
     margin-bottom: 25px;
-    background: #fff;
-    border: 1px solid #e9ecef;
-    box-shadow: -11.729px -11.729px 32px rgba(255, 255, 255, .15);
-    border-radius: 10px
+    background: #22100d;
+    color: #fff;
+    /* border: 1px solid #e9ecef; */
+    box-shadow: -11.729px -11.729px 32px rgb(255 255 255 / 15%);
+    /* border-radius: 10px; */
 }
 
 .feature-bg {
-    padding: 25px;
+    /* padding: 25px; */
     width: 100%;
     border-radius: 10px;
     transition: all .5s ease;
@@ -2238,22 +2239,22 @@ html.menu-opened body {
 }
 
 .feature-bg:hover {
-    background: #413655;
-    transition: all .5s ease;
+    /* background: #413655; */
+    /* transition: all .5s ease; */
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
     -ms-transition: all .5s ease;
-    -webkit-transition: all .5s ease
+    /* -webkit-transition: all .5s ease; */
 }
 
 .feature-bg:hover p,
 .feature-bg:hover .feature-text {
-    color: #fff;
-    transition: all .5s ease;
+    /* color: #fff; */
+    /* transition: all .5s ease; */
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
     -ms-transition: all .5s ease;
-    -webkit-transition: all .5s ease
+    /* -webkit-transition: all .5s ease; */
 }
 
 .feature-bg p {
@@ -2272,11 +2273,11 @@ html.menu-opened body {
 
 .feature-icon {
     background: #fff;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     font-size: 30px;
-    width: 110px;
-    border-radius: 100px;
-    height: 110px;
+    /* width: 110px; */
+    /* border-radius: 100px; */
+    /* height: 110px; */
     display: flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -2301,6 +2302,7 @@ html.menu-opened body {
 }
 
 .feature-text {
+    /* padding: 1rem; */
     font-size: 18px;
     font-weight: 700;
     padding-top: 25px;
@@ -14193,9 +14195,9 @@ img.img-fluid.video-thumb {
 }
 
 .feature-icon img {
-    width: 80px;
-    height: 80px;
-    border-radius: 100px;
+    width: 100%;
+    /* height: 80px; */
+    /* border-radius: 100px; */
 }
 
 img.top-ic {
