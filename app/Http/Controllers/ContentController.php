@@ -101,7 +101,7 @@ class ContentController extends Controller
             unset($input['favicon']);
         }
         if ($content->update($input)) {
-            return redirect()->route('content.index')->with('success', 'course edited successfully.');
+            return redirect()->route('content.index')->with('success', 'content edited successfully.');
         } else {
             return back()->with('error', 'Error.');
         }

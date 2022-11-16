@@ -54,11 +54,15 @@
                               placeholder="Type Here ... ">
                         </div>
                         <div class="mb-3">
-                            <label class="me-sm-2">Type <b class="text-danger">*</b>:</label>
+                            <label class="me-sm-2">Category <b class="text-danger">*</b>:</label>
                             <select class="me-sm-2 default-select form-control wide" name="type"
                               id="inlineFormCustomSelect">
-                                <option value="1" selected>One</option>
-                                <option value="0">Two</option>
+                                <option selected>Select One</option>
+                                @foreach ($categories as $item)
+
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
+
 
                             </select>
                         </div>

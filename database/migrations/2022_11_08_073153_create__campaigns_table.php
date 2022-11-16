@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('discounted_price')->nullable();
             $table->string('start_date')->nullable();
             $table->string('end_date')->nullable();
-            $table->string('type')->nullable()->comment('0 -> pre-recorded , 1-> live class');
             $table->string('hasDiscount')->nullable()->comment('0 -> no , 1-> yes');
             $table->timestamps();
         });

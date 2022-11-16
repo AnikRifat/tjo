@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
@@ -36,6 +37,7 @@ Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {
 
 
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
+    // Route::prefix('admin')->group(function () {
     Route::get('/', [PublicController::class, 'admin'])->name('admin.index');
     //Course-ROutes
 
@@ -71,6 +73,17 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::get('/destroy/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     });
 
+    //testimonial-ROutes
+
+    Route::prefix('category')->group(function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('category.index');
+        Route::get('/create', [CategoryController::class, 'create'])->name('category.create');
+        Route::post('/store', [CategoryController::class, 'store'])->name('category.store');
+        Route::get('/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+        Route::put('/update/{category}', [CategoryController::class, 'update'])->name('category.update');
+        Route::get('/destroy/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
+    });
+
     //website-ROutes
 
     Route::prefix('website')->group(function () {
@@ -82,4 +95,3 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 });
 
 Auth::routes();
-

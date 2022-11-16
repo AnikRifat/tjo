@@ -19,5 +19,5 @@
 <link rel="stylesheet" href="{{ asset('/') }}assets/front/plugins/select2/css/select2.min.css">
 
 <link rel="stylesheet" href="{{ asset('/') }}assets/front/plugins/aos/aos.css">
-
+<link rel="stylesheet" href="{{ asset('/') }}assets/front/css/feather.css">
 <link rel="stylesheet" href="{{ asset('/') }}assets/front/css/style.css">

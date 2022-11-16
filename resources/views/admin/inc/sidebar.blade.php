@@ -56,6 +56,18 @@
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
+                    <span class="nav-text">category</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('category.create') }}">create category</a></li>
+                    <li><a href="{{ route('category.index') }}">View category</a></li>
+
+                </ul>
+            </li>
+
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-144-layout"></i>
                     <span class="nav-text">Testimonial</span>
                 </a>
                 <ul aria-expanded="false">

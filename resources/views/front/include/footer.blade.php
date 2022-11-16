@@ -10,8 +10,7 @@
                             <img src="{{ asset('/') }}assets/front/img/logo.png" alt="logo">
                         </div>
                         <div class="footer-about-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris
+                            <p>{{ $content->sub_title }}
                             </p>
                         </div>
                     </div>
@@ -40,25 +39,25 @@
                                 <img src="{{ asset('/') }}assets/front/img/icon/icon-20.svg" alt="" class="img-fluid">
                             <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
                         </div> --}}
-                        <p>
-                            <img src="{{ asset('/') }}assets/front/img/icon/icon-19.svg" alt="" class="img-fluid">
-                            <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection"
-                              class="__cf_email__" data-cfemail="teacherjackonline@gmail.com">{{ $contact->email }}</a>
+                        <p class="mb-2">
+                            <i class="fas fa-envelope"></i>
+                            {{ $contact->email }}
                         </p>
-                        <p class="mb-0">
-                            <img src="{{ asset('/') }}assets/front/img/icon/icon-21.svg" alt="" class="img-fluid">
+                        <p class="mb-2">
+                            <i class="fas fa-phone"></i>
                             {{ $contact->phone }}
                         </p>
-                        <p class="mb-0">
-                            <img src="{{ asset('/') }}assets/front/img/icon/skype.svg" alt="" class="img-fluid">
-                            {{ $contact->skype }}
+                        <p class="mb-2">
+                            <i class="fas fa-phone"></i>
+                            {{ $contact->phone2 }}
                         </p>
-                        <p class="mb-0">
-                            <img src="{{ asset('/') }}assets/front/img/icon/wechat.svg" alt="" class="img-fluid">
+                        <p class="mb-2">
+                            <i class="fa-brands fa-weixin"></i>
+
                             {{ $contact->wechat }}
                         </p>
-                        <p class="mb-0">
-                            <img src="{{ asset('/') }}assets/front/img/icon/qq.svg" alt="" class="img-fluid">
+                        <p class="mb-2">
+                            <i class="fa-brands fa-qq"></i>
                             {{ $contact->qq }}
                         </p>
                     </div>

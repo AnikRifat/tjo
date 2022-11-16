@@ -21,9 +21,9 @@
                               placeholder="Type Here ... " value="{{ $contact->phone }}">
                         </div>
                         <div class="mb-3">
-                            <label for="skype" class="form-label">skype <b class="text-danger">*</b>:</label>
-                            <input required type="text" class="form-control input-default " name="skype"
-                              placeholder="Type Here ... " value="{{ $contact->skype }}">
+                            <label for="phone2" class="form-label">phone 2 <b class="text-danger">*</b>:</label>
+                            <input required type="text" class="form-control input-default " name="phone2"
+                              placeholder="Type Here ... " value="{{ $contact->phone2 }}">
                         </div>
                         <div class="mb-3">
                             <label for="wechat" class="form-label">wechat <b class="text-danger">*</b>:</label>

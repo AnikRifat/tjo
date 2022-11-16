@@ -73,13 +73,13 @@ class ContactController extends Controller
         $request->validate([
             'email' => 'required',
             'phone' => 'required',
-            'skype' => 'required',
+            'phone2' => 'required',
             'wechat' => 'required',
             'qq' => 'required',
         ]);
         $input = $request->all();
         if ($contact->update($input)) {
-            return redirect()->route('contact.index')->with('success', 'course edited successfully.');
+            return redirect()->route('contact.index')->with('success', 'contact edited successfully.');
         } else {
             return back()->with('error', 'Error.');
         }

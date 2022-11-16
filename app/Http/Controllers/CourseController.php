@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.course.create');
+        $categories = Category::all();
+        return view('admin.pages.course.create', compact('categories'));
     }
 
     /**
@@ -45,6 +47,8 @@ class CourseController extends Controller
             "classes" => 'required',
             "image" => 'required',
             "cover_image" => 'required',
+            "category" => 'required',
+            "category_id" => 'required',
         ]);
         $setId = '#tjo' . uniqid();
         $input = $request->all();
@@ -105,6 +109,8 @@ class CourseController extends Controller
             "intro" => 'required',
             "duration" => 'required',
             "classes" => 'required',
+            "category" => 'required',
+            "category_id" => 'required',
         ]);
         $input = $request->all();
 

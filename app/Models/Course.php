@@ -18,10 +18,10 @@ class Course extends Model
         'overview',
         'preview',
         'intro',
-        'course_plan',
         'duration',
         'classes',
-        'type',
+        'cateegory',
+        'cateegory_id',
     ];
     public function campaign()
     {

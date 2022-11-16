@@ -23,10 +23,10 @@ return new class extends Migration
             $table->string('preview')->nullable();
             $table->string('intro')->nullable();
             $table->string('overview')->nullable();
-            $table->string('course_plan')->nullable();
             $table->string('duration')->nullable();
             $table->string('classes')->nullable();
-            $table->string('type')->nullable()->comment('0 -> pre-recorded , 1-> live class');
+            $table->string('category')->nullable();
+            $table->string('category_id')->nullable();
             $table->timestamps();
         });
     }

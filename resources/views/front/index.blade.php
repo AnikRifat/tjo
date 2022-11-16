@@ -101,14 +101,23 @@
             </div>
         </div>
     </section>
-
+    <section class="category">
+        <div class="container">
+            <div class="row">
+                @foreach ($categories as $item)
+                <div class="col-md-4">
+                    @include('front.components.category-card')
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
     <section class="section trend-course">
         <div class="container">
-            <div class="section-header aos aos-init aos-animate" data-aos="fade-up">
+            {{-- <div class="section-header aos aos-init aos-animate" data-aos="fade-up">
                 <div class="section-sub-head ">
-                    <span>Courses</span>
-                    <h2 class="text-center">PRE - RECORDED COURSES</h2>
+                    <h2 class="text-center">Courses You can Buy</h2>
                 </div>
             </div>
             <div class="course-widget">
@@ -123,211 +132,166 @@
                                 <div class="online-course d-flex align-items-center">
                                     <div class="course-img">
                                         <img src="{{ asset('/') }}assets/front/img/pencil-icon.svg" alt="">
+        </div>
+        <div class="course-inner-content">
+            <h4>Browse more ......</h4>
+        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> --}}
+<div class="section-header aos pt-5 mt-5" data-aos="fade-up">
+    <div class="section-sub-head">
+
+        <h2>UPCOMMING LIVE COURSES</h2>
+    </div>
+    <div class="all-btn all-category d-flex align-items-center">
+        <a href="course-list.html" class="btn btn-primary">All Courses</a>
+    </div>
+</div>
+
+<div class="owl-carousel trending-course owl-theme aos" data-aos="fade-up">
+    @foreach ($campaigns as $item)
+    @include('front.components.course-card')
+    @endforeach
+
+</div>
+
+</div>
+</section>
+<section class="section user-love">
+    <div class="container">
+        <div class="section-header white-header aos" data-aos="fade-up">
+            <div class="section-sub-head feature-head text-center">
+                <span>Check out these real reviews</span>
+                <h2>Users-love-us Don't take it from us.</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+@if($testimonials)
+<section class="testimonial-four">
+    <div class="review">
+        <div class="container">
+            <div class="testi-quotes">
+                <img src="{{ asset('/') }}assets/front/img/qute.png" alt="">
+            </div>
+            <div class="mentor-testimonial lazy slider aos" data-aos="fade-up" data-sizes="50vw ">
+                @foreach ($testimonials as $item)
+                <div class="d-flex justify-content-center">
+                    <div class="testimonial-all d-flex justify-content-center">
+                        <div class="testimonial-two-head text-center align-items-center d-flex">
+                            <div class="testimonial-four-saying ">
+                                <div class="testi-right">
+                                    <img src="{{ asset('/') }}assets/front/img/qute-01.png" alt="">
+                                </div>
+                                <p>{{ $item->text }}</p>
+                                <div class="four-testimonial-founder">
+                                    <div class="fount-about-img">
+                                        <a href="instructor-profile.html"><img
+                                              src="{{ asset('/') }}assets/images/testimonial/{{ $item->image }}" alt=""
+                                              class="img-fluid"></a>
                                     </div>
-                                    <div class="course-inner-content">
-                                        <h4>Browse more ......</h4>
-                                    </div>
+                                    <h3><a href="instructor-profile.html">{{ $item->name }}</a></h3>
+                                    <span>{{ $item->title }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="section-header aos pt-5 mt-5" data-aos="fade-up">
-                <div class="section-sub-head">
-
-                    <h2>UPCOMMING LIVE COURSES</h2>
-                </div>
-                <div class="all-btn all-category d-flex align-items-center">
-                    <a href="course-list.html" class="btn btn-primary">All Courses</a>
-                </div>
-            </div>
-
-            <div class="owl-carousel trending-course owl-theme aos" data-aos="fade-up">
-                @foreach ($campaigns as $item)
-                @include('front.components.course-card')
                 @endforeach
 
-            </div>
 
-        </div>
-    </section>
-    <section class="section user-love">
-        <div class="container">
-            <div class="section-header white-header aos" data-aos="fade-up">
-                <div class="section-sub-head feature-head text-center">
-                    <span>Check out these real reviews</span>
-                    <h2>Users-love-us Don't take it from us.</h2>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+@endif
 
-
-    <section class="testimonial-four">
-        <div class="review">
-            <div class="container">
-                <div class="testi-quotes">
-                    <img src="{{ asset('/') }}assets/front/img/qute.png" alt="">
+<section class="section master-skill">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12">
+                <div class="section-header aos" data-aos="fade-up">
+                    <div class="section-sub-head">
+                        {{-- <span class="display-4">How it works</span> --}}
+                        <h2>Master the skills to drive your career</h2>
+                    </div>
                 </div>
-                <div class="mentor-testimonial lazy slider aos" data-aos="fade-up" data-sizes="50vw ">
-                    <div class="d-flex justify-content-center">
-                        <div class="testimonial-all d-flex justify-content-center">
-                            <div class="testimonial-two-head text-center align-items-center d-flex">
-                                <div class="testimonial-four-saying ">
-                                    <div class="testi-right">
-                                        <img src="{{ asset('/') }}assets/front/img/qute-01.png" alt="">
-                                    </div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type and scrambled it to make a type specimen
-                                        book.</p>
-                                    <div class="four-testimonial-founder">
-                                        <div class="fount-about-img">
-                                            <a href="instructor-profile.html"><img
-                                                  src="{{ asset('/') }}assets/front/img/user/user1.jpg" alt=""
-                                                  class="img-fluid"></a>
+
+                <div class="hiw-group aos" data-aos="fade-up">
+                    <div class="row">
+                        <div class="col0-lg-3 col-md-6">
+                            <div class="feature-box text-center ">
+                                <div class="feature-bg">
+                                    <div class="feature-header">
+                                        <div class="feature-icon">
+                                            <img src="{{ asset('/') }}assets/front/img/proccess/1.png" alt="">
                                         </div>
-                                        <h3><a href="instructor-profile.html">Daziy Millar</a></h3>
-                                        <span>Founder of Awesomeux Technology</span>
+                                        <div class="feature-cont">
+                                            <div class="feature-text">Get a Schedule</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="testimonial-all d-flex justify-content-center">
-                            <div class="testimonial-two-head text-center align-items-center d-flex">
-                                <div class="testimonial-four-saying ">
-                                    <div class="testi-right">
-                                        <img src="{{ asset('/') }}assets/front/img/qute-01.png" alt="">
-                                    </div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type and scrambled it to make a type specimen
-                                        book.</p>
-                                    <div class="four-testimonial-founder">
-                                        <div class="fount-about-img">
-                                            <a href="instructor-profile.html"><img
-                                                  src="{{ asset('/') }}assets/front/img/user/user3.jpg" alt=""
-                                                  class="img-fluid"></a>
+                        <div class="col0-lg-3 col-md-6">
+                            <div class="feature-box text-center ">
+                                <div class="feature-bg">
+                                    <div class="feature-header">
+                                        <div class="feature-icon">
+                                            <img src="{{ asset('/') }}assets/front/img/proccess/2.png" alt="">
                                         </div>
-                                        <h3><a href="instructor-profile.html">john smith</a></h3>
-                                        <span>Founder of Awesomeux Technology</span>
+                                        <div class="feature-cont">
+                                            <div class="feature-text">Fix a TIme</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="testimonial-all d-flex justify-content-center">
-                            <div class="testimonial-two-head text-center align-items-center d-flex">
-                                <div class="testimonial-four-saying ">
-                                    <div class="testi-right">
-                                        <img src="{{ asset('/') }}assets/front/img/qute-01.png" alt="">
-                                    </div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type and scrambled it to make a type specimen
-                                        book.</p>
-                                    <div class="four-testimonial-founder">
-                                        <div class="fount-about-img">
-                                            <a href="instructor-profile.html"><img
-                                                  src="{{ asset('/') }}assets/front/img/user/user2.jpg" alt=""
-                                                  class="img-fluid"></a>
+                        <div class="col0-lg-3 col-md-6">
+                            <div class="feature-box text-center ">
+                                <div class="feature-bg">
+                                    <div class="feature-header">
+                                        <div class="feature-icon">
+                                            <img src="{{ asset('/') }}assets/front/img/proccess/3.png" alt="">
                                         </div>
-                                        <h3><a href="instructor-profile.html">David Lee</a></h3>
-                                        <span>Founder of Awesomeux Technology</span>
+                                        <div class="feature-cont">
+                                            <div class="feature-text">Make payment</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col0-lg-3 col-md-6">
+                            <div class="feature-box text-center ">
+                                <div class="feature-bg">
+                                    <div class="feature-header">
+                                        <div class="feature-icon">
+                                            <img src="{{ asset('/') }}assets/front/img/proccess/4.png" alt="">
+                                        </div>
+                                        <div class="feature-cont">
+                                            <div class="feature-text">Attend Class</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="section master-skill">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-12">
-                    <div class="section-header aos" data-aos="fade-up">
-                        <div class="section-sub-head">
-                            <span class="display-4">How it works</span>
-                            <h2>Master the skills to drive your career</h2>
-                        </div>
-                    </div>
-
-                    <div class="hiw-group aos" data-aos="fade-up">
-                        <div class="row">
-                            <div class="col0-lg-3 col-md-6">
-                                <div class="feature-box text-center ">
-                                    <div class="feature-bg">
-                                        <div class="feature-header">
-                                            <div class="feature-icon">
-                                                <img src="{{ asset('/') }}assets/front/img/proccess/1.png" alt="">
-                                            </div>
-                                            <div class="feature-cont">
-                                                <div class="feature-text">Get a Schedule</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col0-lg-3 col-md-6">
-                                <div class="feature-box text-center ">
-                                    <div class="feature-bg">
-                                        <div class="feature-header">
-                                            <div class="feature-icon">
-                                                <img src="{{ asset('/') }}assets/front/img/proccess/2.png" alt="">
-                                            </div>
-                                            <div class="feature-cont">
-                                                <div class="feature-text">Fix a TIme</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col0-lg-3 col-md-6">
-                                <div class="feature-box text-center ">
-                                    <div class="feature-bg">
-                                        <div class="feature-header">
-                                            <div class="feature-icon">
-                                                <img src="{{ asset('/') }}assets/front/img/proccess/3.png" alt="">
-                                            </div>
-                                            <div class="feature-cont">
-                                                <div class="feature-text">Make payment</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col0-lg-3 col-md-6">
-                                <div class="feature-box text-center ">
-                                    <div class="feature-bg">
-                                        <div class="feature-header">
-                                            <div class="feature-icon">
-                                                <img src="{{ asset('/') }}assets/front/img/proccess/4.png" alt="">
-                                            </div>
-                                            <div class="feature-cont">
-                                                <div class="feature-text">Attend Class</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-12 d-flex align-items-end">
-                    <div class="career-img aos" data-aos="fade-up">
-                        <img src="{{ asset('/') }}assets/front/img/join.png" alt="" class="img-fluid">
-                    </div>
+            <div class="col-lg-5 col-md-12 d-flex align-items-end">
+                <div class="career-img aos" data-aos="fade-up">
+                    <img src="{{ asset('/') }}assets/front/img/join.png" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 

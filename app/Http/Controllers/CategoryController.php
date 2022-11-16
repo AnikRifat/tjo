@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Testimonial;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class TestimonialController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +13,9 @@ class TestimonialController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-
     {
-        $testimonials = Testimonial::all();
-        return view('admin.pages.testimonial.index', compact('testimonials'));
+        $categories = Category::all();
+        return view('admin.pages.category.index', compact('categories'));
     }
 
     /**
@@ -27,7 +25,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.testimonial.create');
+        return view('admin.pages.category.create');
     }
 
     /**
@@ -40,20 +38,17 @@ class TestimonialController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'title' => 'required',
-            'text' => 'required',
+            'image' => 'required',
         ]);
         $input = $request->all();
         if ($image = $request->file('image')) {
-            $filePath = 'assets/images/testimonial/';
+            $filePath = 'assets/images/category/';
             $setImage = date('YmdHis') . "_1" . "." . $image->getClientOriginalExtension();
             $image->move($filePath, $setImage);
             $input['image'] = $setImage;
-        } else {
-            unset($input['image']);
         }
-        if (Testimonial::create($input)) {
-            return redirect()->route('testimonial.index')->with('success', 'Testimonial Added successfully.');
+        if (category::create($input)) {
+            return redirect()->route('category.index')->with('success', 'category Added successfully.');
         } else {
             return back()->with('error', 'Error.');
         }
@@ -62,10 +57,10 @@ class TestimonialController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Testimonial $testimonial)
+    public function show(Category $category)
     {
         //
     }
@@ -73,40 +68,39 @@ class TestimonialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial $testimonial)
+    public function edit(Category $category)
     {
-        return view('admin.pages.testimonial.edit', compact('testimonial'));
+        return view('admin.pages.category.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request, Category $category)
     {
         $request->validate([
             'name' => 'required',
-            'title' => 'required',
-            'text' => 'required',
+
         ]);
         $input = $request->all();
         if ($image = $request->file('image')) {
-            $filePath = 'assets/images/testimonial/';
-            $setImage = $testimonial->image;
+            $filePath = 'assets/images/category/';
+            $setImage = $category->image;
             $image->move($filePath, $setImage);
             $input['image'] = $setImage;
         } else {
             unset($input['image']);
         }
-        if ($testimonial->update($input)) {
+        if ($category->update($input)) {
 
-            return redirect()->route('testimonial.index')->with('success', 'Testimonial edited successfully.');
+            return redirect()->route('category.index')->with('success', 'category edited successfully.');
         } else {
             return back()->with('error', 'Error.');
         }
@@ -115,13 +109,13 @@ class TestimonialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Testimonial $testimonial)
+    public function destroy(Category $category)
     {
-        if ($testimonial->delete()) {
-            return redirect()->route('testimonial.index')->with('success', 'Testimonial deleted successfully.');
+        if ($category->delete()) {
+            return redirect()->route('category.index')->with('success', 'category deleted successfully.');
         } else {
             return back()->with('error', 'Error.');
         }
