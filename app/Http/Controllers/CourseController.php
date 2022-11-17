@@ -41,18 +41,23 @@ class CourseController extends Controller
         // dd($request->all());
         $request->validate([
             "title" => 'required',
-            "prerview" => 'required',
+            "preview" => 'required',
+            "overview" => 'required',
             "intro" => 'required',
             "duration" => 'required',
             "classes" => 'required',
+            "price" => 'required',
             "image" => 'required',
             "cover_image" => 'required',
-            "category" => 'required',
             "category_id" => 'required',
         ]);
+
         $setId = '#tjo' . uniqid();
         $input = $request->all();
+
+        $input['category'] = Category::find($input['category_id'])->name;
         $input['course_id'] = $setId;
+        // dd($input);
         if ($image = $request->file('image')) {
             $filePath = 'assets/images/course/';
             $setImage = date('YmdHis') . "_course_image" . "." . $image->getClientOriginalExtension();
@@ -65,6 +70,7 @@ class CourseController extends Controller
             $image->move($filePath, $setImage);
             $input['cover_image'] = $setImage;
         }
+        // dd($input);
         if (Course::create($input)) {
             return redirect()->route('course.index')->with('success', 'course added successfully.');
         } else {
@@ -103,26 +109,36 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
+        //  dd($request->all());
         $request->validate([
             "title" => 'required',
-            "prerview" => 'required',
+            "preview" => 'required',
+            "price" => 'required',
             "intro" => 'required',
             "duration" => 'required',
             "classes" => 'required',
-            "category" => 'required',
             "category_id" => 'required',
         ]);
-        $input = $request->all();
 
+        $input = $request->all();
+        $input['category'] = Category::find($input['category_id'])->name;
         if ($image = $request->file('image')) {
             $filePath = 'assets/images/course/';
-            $setImage = date('YmdHis') . "_1" . "." . $image->getClientOriginalExtension();
+            $setImage = $course->image;
             $image->move($filePath, $setImage);
             $input['image'] = $setImage;
         } else {
             unset($input['image']);
         }
-
+        if ($image = $request->file('cover_image')) {
+            $filePath = 'assets/images/course/';
+            $setImage = $course->cover_image;
+            $image->move($filePath, $setImage);
+            $input['cover_image'] = $setImage;
+        } else {
+            unset($input['cover_image']);
+        }
+        // dd($input);
         if ($course->update($input)) {
             return redirect()->route('course.index')->with('success', 'course edited successfully.');
         } else {

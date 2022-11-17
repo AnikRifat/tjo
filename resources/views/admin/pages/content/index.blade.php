@@ -18,6 +18,10 @@
                               placeholder="Type Here ... " value="{{ $content->name }}">
                         </div>
                         <div class="mb-3">
+                            <label for="about" class="form-label">about <b class="text-danger">*</b>:</label>
+                            <textarea id="editor2" name="about">{!! $content->about !!}</textarea>
+                        </div>
+                        <div class="mb-3">
                             <label for="title" class="form-label">title <b class="text-danger">*</b>:</label>
                             <textarea id="editor" name="title">{!! $content->title !!}</textarea>
                         </div>

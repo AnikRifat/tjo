@@ -35,6 +35,11 @@
                               placeholder="Type Here ... "></textarea>
                         </div>
                         <div class="mb-3">
+                            <label for="price" class="form-label">price <b class="text-danger">*</b>:</label>
+                            <input required type="text" class="form-control input-default " name="price"
+                              placeholder="Type Here ... ">
+                        </div>
+                        <div class="mb-3">
                             <label for="intro" class="form-label">Intro <b class="text-danger">*</b>:</label>
                             <input required type="text" class="form-control input-default " name="intro"
                               placeholder="Type Here ... ">
@@ -55,7 +60,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="me-sm-2">Category <b class="text-danger">*</b>:</label>
-                            <select class="me-sm-2 default-select form-control wide" name="type"
+                            <select class="me-sm-2 default-select form-control wide" name="category_id"
                               id="inlineFormCustomSelect">
                                 <option selected>Select One</option>
                                 @foreach ($categories as $item)

@@ -19,6 +19,7 @@
                                         <th>ID</th>
                                         <th>Course ID</th>
                                         <th>Title</th>
+                                        <th>Price</th>
                                         <th>Total Duration</th>
                                         <th>Total Classes</th>
                                         <th>Image</th>
@@ -26,6 +27,8 @@
                                         <th>overview</th>
                                         <th>Preview</th>
                                         <th>intro</th>
+                                        <th>Category</th>
+                                        <th>Category ID</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -35,6 +38,7 @@
                                         <td>{{ $course->id }}</td>
                                         <td>{{ $course->course_id }}</td>
                                         <td>{{ $course->title }}</td>
+                                        <td>{{ $course->price }}</td>
                                         <td>{{ $course->duration }}</td>
                                         <td>{{ $course->classes }}</td>
                                         <td><img src="{{ asset('/') }}assets/images/course/{{ $course->image }}"
@@ -44,6 +48,8 @@
                                         <td>{!! Str::limit($course->overview, 50) !!}</td>
                                         <td>{{ $course->preview }}</td>
                                         <td>{{ $course->intro }}</td>
+                                        <td>{{ $course->category }}</td>
+                                        <td>{{ $course->category_id }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{ route('course.edit',$course->id) }}"

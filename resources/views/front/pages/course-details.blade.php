@@ -21,7 +21,42 @@
         </div>
     </div>
 
+    @if ($islive)
+    <div class="inner-banner" style="
+    padding: 45px 0;
+    background: url({{ asset('/assets/images') }}/course/{{ $islive->banner }});
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+">
+        <div class="container">
+            <div class="countdown-container">
+                <div class="countdown-el days-c">
+                    <p class="big-text" id="day"></p>
+                    <span>Days</span>
+                </div>
+                <div class="countdown-el hours-c">
+                    <p class="big-text" id="hour"></p>
+                    <span>Hours</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="minute"></p>
+                    </p>
+                    <span>Minutes</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="second"></p>
+                    </p>
+                    <span>Second</span>
+                </div>
+            </div>
 
+        </div>
+    </div>
+
+    {{-- @else --}}
+
+    @endif
 
     <section class="page-content course-sec">
         <div class="container">
@@ -108,8 +143,10 @@
 @endsection
 
 @section('script')
+@if($islive)
 <script>
-    var deadline = new Date("november 15, 2022 15:37:25").getTime();
+    // var end_date =
+    var deadline = new Date("{{ $islive->end_date }}").getTime();
 var x = setInterval(function() {
    var currentTime = new Date().getTime();
    var t = deadline - currentTime;
@@ -132,4 +169,6 @@ var x = setInterval(function() {
 }, 1000);
 
 </script>
+@endif
+
 @endsection

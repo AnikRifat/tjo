@@ -20,8 +20,8 @@ class Course extends Model
         'intro',
         'duration',
         'classes',
-        'cateegory',
-        'cateegory_id',
+        'category',
+        'category_id',
     ];
     public function campaign()
     {

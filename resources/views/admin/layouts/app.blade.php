@@ -177,6 +177,13 @@
             console.error( error );
         } );
         </script>
+        <script>
+            ClassicEditor
+.create( document.querySelector( '#editor2' ) )
+.catch( error => {
+    console.error( error );
+} );
+        </script>
         {{-- <script src="{{ asset('/') }}assets/admin/js/styleSwitcher.js" type="text/javascript"></script> --}}
 
     </body>

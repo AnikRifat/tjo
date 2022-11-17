@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             categorySeeder::class,
             CourseSeeder::class,
             LiveSeeder::class,
+            VideoSeeder::class,
             CampaignSeeder::class,
             ContentSeeder::class,
             ContactSeeder::class,

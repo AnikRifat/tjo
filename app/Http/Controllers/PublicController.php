@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Campaign;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Live;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -50,8 +51,9 @@ class PublicController extends Controller
      */
     public function courseDetails(Course $course)
     {
-        // $iscampaign = Campaign::where('course_id', $course->id);
-        return view('front.pages.course-details', compact('course'));
+        $islive = Live::where('course_id', $course->course_id)->first();
+        // dd($islive);
+        return view('front.pages.course-details', compact('course', 'islive'));
     }
     /**
      * Display the specified resource.

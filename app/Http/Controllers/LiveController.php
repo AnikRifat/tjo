@@ -39,27 +39,18 @@ class LiveController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name" => 'required',
             "course_id" => 'required',
-            "type" => 'required',
-            "hasdiscount" => 'required',
             "start_date" => 'required',
             "end_date" => 'required',
         ]);
 
         $input = $request->all();
 
-        $course = Course::where('course_id', $request->input('course_id'))->first();
-        $discount = $request->input('discount');
-        $discounted_price = $course->price - ($course->price * ($discount  / 100));
-        $input['discounted_price'] = $discounted_price;
-        $input['price'] = $course->price;
-
-        if ($image = $request->file('thumbnail')) {
+        if ($image = $request->file('banner')) {
             $filePath = 'assets/images/course/';
-            $setImage = date('YmdHis') . "_course_thumbnail" . "." . $image->getClientOriginalExtension();
+            $setImage = date('YmdHis') . "_live_banner" . "." . $image->getClientOriginalExtension();
             $image->move($filePath, $setImage);
-            $input['thumbnail'] = $setImage;
+            $input['banner'] = $setImage;
         }
         if (Live::create($input)) {
             return redirect()->route('live.index')->with('success', 'live added successfully.');
@@ -105,13 +96,6 @@ class LiveController extends Controller
             "end_date" => 'required',
         ]);
         $input = $request->all();
-
-        $course = Course::where('course_id', $request->input('course_id'))->first();
-        $discount = $request->input('discount');
-        $discounted_price = $course->price - ($course->price * ($discount  / 100));
-        $input['discounted_price'] = $discounted_price;
-        $input['price'] = $course->price;
-
 
         if ($image = $request->file('banner')) {
             $filePath = 'assets/images/course/';

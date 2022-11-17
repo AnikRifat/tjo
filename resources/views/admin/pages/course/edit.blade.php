@@ -34,7 +34,12 @@
                         <div class="mb-3">
                             <label for="preview" class="form-label">Preview <b class="text-danger">*</b>:</label>
                             <textarea type="text" class="form-control input-default " name="preview"
-                              placeholder="Type Here ... " value="{{ $course->preview }}"></textarea>
+                              placeholder="Type Here ... ">{{ $course->preview }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">price <b class="text-danger">*</b>:</label>
+                            <input required type="text" class="form-control input-default " name="price"
+                              placeholder="Type Here ... " value="{{ $course->price }}">
                         </div>
                         <div class="mb-3">
                             <label for="intro" class="form-label">Intro <b class="text-danger">*</b>:</label>
@@ -56,16 +61,19 @@
                               placeholder="Type Here ... " value="{{ $course->classes }}">
                         </div>
                         <div class="mb-3">
-                            <label class="me-sm-2">Type <b class="text-danger">*</b>:</label>
-                            <select class="me-sm-2 default-select form-control wide" name="type"
+                            <label class="me-sm-2">Category <b class="text-danger">*</b>:</label>
+                            <select class="me-sm-2 default-select form-control wide" name="category_id"
                               id="inlineFormCustomSelect">
-                                <option value="1" @if ( $course->classess == 1)
+                                <option selected>Select One</option>
+                                @foreach ($categories as $item)
+
+                                <option value="{{ $item->id }}" @if ( $item->id == $course->category_id)
                                     selected
                                     @endif
-                                    >One</option>
-                                <option value="0" @if ( $course->classess == 0)
-                                    selected
-                                    @endif>Two</option>
+
+                                    >{{ $item->name }}</option>
+                                @endforeach
+
 
                             </select>
                         </div>
