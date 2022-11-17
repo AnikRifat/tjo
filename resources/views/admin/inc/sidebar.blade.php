@@ -44,6 +44,17 @@
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
+                    <span class="nav-text">live</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('live.create') }}">Add live</a></li>
+                    <li><a href="{{ route('live.index') }}">View live</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-144-layout"></i>
                     <span class="nav-text">Campaign</span>
                 </a>
                 <ul aria-expanded="false">
@@ -52,7 +63,6 @@
 
                 </ul>
             </li>
-
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>

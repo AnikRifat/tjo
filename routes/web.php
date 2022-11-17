@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LiveController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Auth;
@@ -63,6 +64,16 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::get('/destroy/{campaign}', [CampaignController::class, 'destroy'])->name('campaign.destroy');
     });
 
+    //live-ROutes
+
+    Route::prefix('live')->group(function () {
+        Route::get('/', [LiveController::class, 'index'])->name('live.index');
+        Route::get('/create', [LiveController::class, 'create'])->name('live.create');
+        Route::post('/store', [LiveController::class, 'store'])->name('live.store');
+        Route::get('/edit/{live}', [LiveController::class, 'edit'])->name('live.edit');
+        Route::put('/update/{live}', [LiveController::class, 'update'])->name('live.update');
+        Route::get('/destroy/{live}', [LiveController::class, 'destroy'])->name('live.destroy');
+    });
     //testimonial-ROutes
 
     Route::prefix('testimonial')->group(function () {
