@@ -10,6 +10,7 @@ class Content extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'about',
         'title',
         'sub_title',
         'logo',

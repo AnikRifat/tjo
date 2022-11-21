@@ -20,9 +20,11 @@ class DatabaseSeeder extends Seeder
             LiveSeeder::class,
             VideoSeeder::class,
             CampaignSeeder::class,
+            TestimonialSeeder::class,
             ContentSeeder::class,
             ContactSeeder::class,
             UserSeeder::class,
+            CheckoutSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

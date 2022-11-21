@@ -38,6 +38,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label class="form-control-label">phone</label>
+                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror"
+                                  name="phone" placeholder="please include your country code..."
+                                  value="{{ old('phone') }}" required autocomplete="phone">
+
+                                @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <label class="form-control-label">Password</label>
                                 <div class="pass-group" id="passwordInput">
                                     <input id="password" type="password"
@@ -80,6 +92,9 @@
                             </div>
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-start" type="submit">Create Account</button>
+                            </div>
+                            <div class="d-grid">
+                                <a href="{{ route('login') }}" class="btn btn-info mt-3" type="submit">Login</a>
                             </div>
                         </form>
                     </div>

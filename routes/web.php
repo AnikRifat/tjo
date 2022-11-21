@@ -2,13 +2,17 @@
 
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LiveController;
+use App\Http\Controllers\PaymeentController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +36,11 @@ Route::get('/courses/{category}', [PublicController::class, 'categoryCourse'])->
 
 Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('user.index');
+    Route::get('/request/{checkout}', [CheckoutController::class, 'request'])->name('checkout.request');
+    Route::post('/payment', [PaymentController::class, 'pay'])->name('payment');
+    Route::get('/cart/{course}', [PublicController::class, 'cart'])->name('cart');
+
+    Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
 });
 
 
@@ -85,7 +94,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::get('/destroy/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     });
 
-    //testimonial-ROutes
+    //category-ROutes
 
     Route::prefix('category')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('category.index');
@@ -94,6 +103,25 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::get('/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
         Route::put('/update/{category}', [CategoryController::class, 'update'])->name('category.update');
         Route::get('/destroy/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
+    });
+
+    //video-ROutes
+
+    Route::prefix('video')->group(function () {
+        Route::get('/', [VideoController::class, 'index'])->name('video.index');
+        Route::get('/create', [VideoController::class, 'create'])->name('video.create');
+        Route::post('/store', [VideoController::class, 'store'])->name('video.store');
+        Route::get('/edit/{video}', [VideoController::class, 'edit'])->name('video.edit');
+        Route::put('/update/{video}', [VideoController::class, 'update'])->name('video.update');
+        Route::get('/destroy/{video}', [VideoController::class, 'destroy'])->name('video.destroy');
+    });
+
+    //checkout-ROutes
+
+    Route::prefix('checkout')->group(function () {
+        Route::get('/', [CheckoutController::class, 'index'])->name('checkout.index');
+
+        Route::get('/show', [CheckoutController::class, 'show'])->name('checkout.show');
     });
 
     //website-ROutes
@@ -105,5 +133,10 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::put('/content/update/{content}', [ContentController::class, 'update'])->name('content.update');
     });
 });
+//checkout-ROutes
 
+// Route::prefix('checkout')->group(function () {
+//     Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
+//     Route::get('/request/{checkout}', [CheckoutController::class, 'request'])->name('checkout.request');
+// });
 Auth::routes();

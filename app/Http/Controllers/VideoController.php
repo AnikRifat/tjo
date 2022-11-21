@@ -14,7 +14,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $videos = Video::all();
+        return view('admin.pages.video.index', compact('videos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.video.create');
     }
 
     /**
@@ -35,7 +36,22 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'link' => 'required',
+            'thumbnail' => 'required',
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('thumbnail')) {
+            $filePath = 'assets/images/thumbnail/';
+            $setImage = date('YmdHis') . "_1" . "." . $image->getClientOriginalExtension();
+            $image->move($filePath, $setImage);
+            $input['thumbnail'] = $setImage;
+        }
+        if (Video::create($input)) {
+            return redirect()->route('video.index')->with('success', 'video Added successfully.');
+        } else {
+            return back()->with('error', 'Error.');
+        }
     }
 
     /**
@@ -57,7 +73,7 @@ class VideoController extends Controller
      */
     public function edit(Video $video)
     {
-        //
+        return view('admin.pages.video.edit', compact('video'));
     }
 
     /**
@@ -69,7 +85,27 @@ class VideoController extends Controller
      */
     public function update(Request $request, Video $video)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+            'link' => 'required',
+
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('thumbnail')) {
+            $filePath = 'assets/images/thumbnail/';
+            $setImage = $video->thumbnail;
+            $image->move($filePath, $setImage);
+            $input['thumbnail'] = $setImage;
+        } else {
+            unset($input['thumbnail']);
+        }
+        // dd($input);
+        if ($video->update($input)) {
+
+            return redirect()->route('video.index')->with('success', 'video edited successfully.');
+        } else {
+            return back()->with('error', 'Error.');
+        }
     }
 
     /**
@@ -80,6 +116,10 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        if ($video->delete()) {
+            return redirect()->route('video.index')->with('success', 'video deleted successfully.');
+        } else {
+            return back()->with('error', 'Error.');
+        }
     }
 }

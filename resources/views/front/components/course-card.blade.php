@@ -25,7 +25,7 @@
             </div>
 
             <div class="all-btn all-category d-flex align-items-center">
-                <a href="checkout.html" class="btn btn-primary btn-block">Enroll NOW</a>
+                <a href="{{ route('course.details',$item->id) }}" class="btn btn-primary btn-block">Enroll NOW</a>
             </div>
         </div>
     </div>

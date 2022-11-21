@@ -27,4 +27,9 @@ class Course extends Model
     {
         return $this->belongsTo(Campaign::class, 'course_id', 'course_id');
     }
+
+    function hasLive()
+    {
+        return $this->hasOne(Live::class, 'course_id', 'course_id');
+    }
 }

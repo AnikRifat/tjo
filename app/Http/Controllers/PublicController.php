@@ -24,6 +24,13 @@ class PublicController extends Controller
     {
         return view('error-access');
     }
+    public function cart($id)
+    {
+        // dd($id);
+        $item = Course::find($id)->first();
+        // dd($item);
+        return view('front.pages.checkout', compact('item'));
+    }
     public function categoryCourse($id)
     {
         $category = Category::find($id);

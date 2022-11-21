@@ -72,6 +72,7 @@ class ContentController extends Controller
         // dd($request->all());
         $request->validate([
             'name' => 'required',
+            'about' => 'required',
             'title' => 'required',
             'sub_title' => 'required',
         ]);

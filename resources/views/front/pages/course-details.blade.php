@@ -9,7 +9,7 @@
                     <div class="breadcrumb-list">
                         <nav aria-label="breadcrumb" class="page-breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                 <li class="breadcrumb-item" aria-current="page">Courses</li>
                                 <li class="breadcrumb-item" aria-current="page">All Courses</li>
                                 <li class="breadcrumb-item" aria-current="page">{{ $course->title }}</li>
@@ -83,7 +83,9 @@
                                                         <h3>${{ $course->price }}</h3>
                                                     </div>
 
-                                                    <a href="checkout.html" class="btn btn-enroll w-100">Enroll Now</a>
+                                                    <a href="{{ route('cart',$course->id) }}"
+                                                      class="btn btn-enroll w-100">Enroll
+                                                        Now</a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-8">
@@ -143,6 +145,15 @@
 @endsection
 
 @section('script')
+<script>
+    <form action="" class="d-none" id="submitForm">
+                                <input type="text" value="" name="course_id">
+                                <input type="text" value="" name="user_id">
+                            </form>
+    function submit(){
+        document.getElementById(`submitForm`).submit();
+    }
+</script>
 @if($islive)
 <script>
     // var end_date =

@@ -82,7 +82,8 @@
                                                             off</p>
                                                     </div>
 
-                                                    <a href="checkout.html" class="btn btn-enroll w-100">Enroll Now</a>
+                                                    <a href="{{ route('cart',$course->id) }}"
+                                                      class="btn btn-enroll w-100">Enroll Now</a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-8">

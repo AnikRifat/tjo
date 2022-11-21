@@ -9,7 +9,7 @@
 
                 <div class="login-wrapper">
                     <div class="loginbox">
-                        <div class="w-100 ">
+                        <div class="w-100  ">
                             <div class="img-logo text-center">
                                 <img src="{{ asset('/') }}assets/images/content/{{ $content->logo }}" class="img-fluid"
                                   alt="Logo">
@@ -53,6 +53,10 @@
                                 </div>
                                 <div class="d-grid">
                                     <button class="btn btn-primary btn-start" type="submit">Sign In</button>
+                                </div>
+                                <div class="d-grid">
+                                    <a href="{{ route('register') }}" class="btn btn-info mt-3"
+                                      type="submit">register</a>
                                 </div>
                             </form>
                         </div>
