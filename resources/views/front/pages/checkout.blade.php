@@ -66,7 +66,9 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
                                         <div class="cart-subtotal">
-                                            <p>Subtotal <span>{{ $item->price }}</span></p>
+                                            <p>Payable ammount <small class="small text-info">(pay with $
+                                                    currency)</small><span><input type="text" id="payment_box"
+                                                      class="form-control"></span></p>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12">
@@ -95,16 +97,20 @@
 @endsection
 @section('script')
 <script
-  src="https://www.paypal.com/sdk/js?client-id=ATSnAZvXJRaB6_E-mqEhp30ssxOMJOvWvhIVW2x0Mb6JYVsfKD4qTNwybomWzQ7Wqiup2uz_UBE_9izq&currency=USD">
+  src="https://www.paypal.com/sdk/js?client-id=AdemfddwdPxaI8XdXZqPK5dKX1wzM3-PkDzVT1Or9kbu6c7LfAvJ9pqPVM0xxOOZaFCyH00uFlNFxvK5&currency=USD">
 </script>
 <script>
     paypal.Buttons({
+
+        //
         // Sets up the transaction when a payment button is clicked
         createOrder: (data, actions) => {
+            let ammount = document.getElementById('payment_box').value
+            console.log(ammount)
           return actions.order.create({
             purchase_units: [{
               amount: {
-                value: '77.44' // Can also reference a variable or function
+                value: ammount // Can also reference a variable or function
               }
             }]
           });
@@ -117,7 +123,7 @@
             const transaction = orderData.purchase_units[0].payments.captures[0];
             document.getElementById("checkout").submit();
             // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-            
+
             // When ready to go live, remove the alert and show a success message within this page. For example:
             // const element = document.getElementById('paypal-button-container');
             // element.innerHTML = '<h3>Thank you for your payment!</h3>';

@@ -105,45 +105,37 @@
 
         </div>
     </section>
-    <section class="section user-love">
-        <div class="container">
-            <div class="section-header white-header aos" data-aos="fade-up">
-                <div class="section-sub-head feature-head text-center">
-                    <span>Check out these real reviews</span>
-                    <h2>Users-love-us Don't take it from us.</h2>
-                </div>
-            </div>
-        </div>
-    </section>
 
     @if($testimonials)
-    <section class="testimonial-four">
-        <div class="review">
-            <div class="container">
-                <div class="testi-quotes">
-                    <img src="{{ asset('/') }}assets/front/img/qute.png" alt="">
+    <section class="section trend-course">
+        <div class="container">
+            <div class="section-header aos" data-aos="fade-up">
+                <div class="section-sub-head">
+                    <h2>Users Who Love Us</h2>
                 </div>
-                <div class="mentor-testimonial lazy slider aos" data-aos="fade-up" data-sizes="50vw ">
+
+            </div>
+
+
+            <div class="feature-instructors">
+                <div class="owl-carousel instructors-course owl-theme aos" data-aos="fade-up">
                     @foreach ($testimonials as $item)
-                    <div class="d-flex justify-content-center">
-                        <div class="testimonial-all d-flex justify-content-center">
-                            <div class="testimonial-two-head text-center align-items-center d-flex">
-                                <div class="testimonial-four-saying ">
-                                    <div class="testi-right">
-                                        <img src="{{ asset('/') }}assets/front/img/qute-01.png" alt="">
-                                    </div>
-                                    <p>{{ $item->text }}</p>
-                                    <div class="four-testimonial-founder">
-                                        <div class="fount-about-img">
-                                            <a href="instructor-profile.html"><img
-                                                  src="{{ asset('/') }}assets/images/testimonial/{{ $item->image }}"
-                                                  alt="" class="img-fluid"></a>
-                                        </div>
-                                        <h3><a href="instructor-profile.html">{{ $item->name }}</a></h3>
-                                        <span>{{ $item->title }}</span>
-                                    </div>
+                    <div class="instructors-widget">
+                        <div class="instructors-content">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="text-image"
+                                      src="{{ asset('/assets/images/testimonial') }}/{{ $item->image }}" alt="">
                                 </div>
+                                <div class="col-9">
+                                    <h5>{{ $item->name }}</h5>
+                                    <p>{{ $item->title }}</p>
+                                </div>
+                                <div class="col-12"></div>
+                                <span>{{ $item->text }}</span>
                             </div>
+
+
                         </div>
                     </div>
                     @endforeach
@@ -151,9 +143,11 @@
 
                 </div>
             </div>
-        </div>
     </section>
     @endif
+
+
+
 
     <section class="section master-skill">
         <div class="container">

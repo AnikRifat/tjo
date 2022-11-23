@@ -1,4 +1,4 @@
-<div class="course-box trend-box">
+<div class="course-box trend-box w-100">
     <div class="product trend-product">
         <div class="product-img">
             <a href="{{ route('course.details',$item->id) }}">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="all-btn all-category d-flex align-items-center">
-                <a href="{{ route('course.details',$item->id) }}" class="btn btn-primary btn-block">BUY NOW</a>
+                <a href="{{ route('course.details',$item->id) }}" class="btn btn-primary btn-block">Details</a>
             </div>
         </div>
     </div>

@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label">Password</label>
+                                <label class="form-control-label">Confirm Password</label>
                                 <div class="pass-group" id="password_confirmation">
                                     <input id="password" type="password"
                                       class="form-control @error('password') is-invalid @enderror"

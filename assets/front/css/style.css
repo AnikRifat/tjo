@@ -2554,7 +2554,7 @@ html.menu-opened body {
 }
 
 .master-skill {
-    margin: 300px 0 0;
+    /* margin: 300px 0 0; */
 }
 
 .blur-border {
@@ -3140,7 +3140,7 @@ html.menu-opened body {
 }
 
 [dir=rtl] .testimonial-four .slick-prev:before {
-    content: 'ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢'
+    content: 'ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢'
 }
 
 .testimonial-four .slick-next:before {
@@ -3151,7 +3151,7 @@ html.menu-opened body {
 }
 
 [dir=rtl] .testimonial-four .slick-next:before {
-    content: 'ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Ãƒâ€šÃ‚Â'
+    content: 'ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â'
 }
 
 .testimonial-all {
@@ -5126,7 +5126,7 @@ input[type=password]::-ms-clear {
 
 .page-content {
     background: #fafafa;
-    padding: 80px 0 60px
+    padding: 40px 0 60px;
 }
 
 .instructor-page-content {
@@ -14210,4 +14210,18 @@ img.top-ic {
     margin-bottom: 40px;
     line-height: 25px;
     max-width: 500px;
+}
+
+.section-sub-head {
+    text-align: center;
+    margin: 0px auto;
+    padding-bottom: 2rem;
+}
+
+
+
+img.text-image {
+    height: 5rem;
+    width: 5rem !important;
+    border-radius: 100px;
 }

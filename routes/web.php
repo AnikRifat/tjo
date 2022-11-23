@@ -36,16 +36,16 @@ Route::get('/courses/{category}', [PublicController::class, 'categoryCourse'])->
 
 Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('user.index');
+
+
     Route::get('/request/{checkout}', [CheckoutController::class, 'request'])->name('checkout.request');
     Route::post('/payment', [PaymentController::class, 'pay'])->name('payment');
     Route::get('/cart/{course}', [PublicController::class, 'cart'])->name('cart');
-
-    Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
 });
 
 
 
-
+Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
 
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     // Route::prefix('admin')->group(function () {

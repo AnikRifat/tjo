@@ -8,7 +8,7 @@ Version      : 1.0
     "use strict";
 
     // Stick Sidebar
-	
+
 	if ($(window).width() > 767) {
 		if($('.theiaStickySidebar').length > 0) {
 			$('.theiaStickySidebar').theiaStickySidebar({
@@ -17,7 +17,7 @@ Version      : 1.0
 			});
 		}
 	}
-		
+
 	if($('.toggle-password').length > 0) {
 		$(document).on('click', '.toggle-password', function() {
 			$(this).toggleClass("feather-eye feather-eye-off");
@@ -29,14 +29,14 @@ Version      : 1.0
 			}
 		});
 	}
-	
+
 	// Sidebar
-	
+
 	if($(window).width() <= 991){
 	var Sidemenu = function() {
 		this.$menuItem = $('.main-nav a');
 	};
-	
+
 	function init() {
 		var $this = Sidemenu;
 		$('.main-nav a').on('click', function(e) {
@@ -56,26 +56,26 @@ Version      : 1.0
 	}
 
 	// Sidebar Initiate
-	
+
 	init();
 	}
-	
+
 	// Icon Btn
-	
+
 	$('.course-share .fa-heart').on('click', function (e) {
 		e.preventDefault();
       	$(this).toggleClass('color-active');
     });
-	
+
 	// Toggle
-	
+
 	if($('#edit-rating').length > 0) {
 		$('#edit-rating').on('click', function () {
 			$('.publish-rate').toggle('1000');
 			$('.stip-grp').toggle('1000');
 		});
 	}
-	
+
 	// JQuery counterUp
 
 	if($('.course-count .counterUp').length > 0) {
@@ -84,9 +84,9 @@ Version      : 1.0
             time: 1500
         });
 	}
-	
+
 	// Mobile menu sidebar overlay
-	
+
 	$('.header-fixed').append('<div class="sidebar-overlay"></div>');
 	$(document).on('click', '#mobile_btn', function() {
 		$('main-wrapper').toggleClass('slide-nav');
@@ -94,36 +94,36 @@ Version      : 1.0
 		$('html').addClass('menu-opened');
 		return false;
 	});
-	
+
 	$(document).on('click', '.sidebar-overlay', function() {
 		$('html').removeClass('menu-opened');
 		$(this).removeClass('opened');
 		$('main-wrapper').removeClass('slide-nav');
 	});
-	
+
 	$(document).on('click', '#menu_close', function() {
 		$('html').removeClass('menu-opened');
 		$('.sidebar-overlay').removeClass('opened');
 		$('main-wrapper').removeClass('slide-nav');
 	});
-	
+
 	// Select 2
-	
+
 	if ($('.select').length > 0) {
 		$('.select').select2({
 			minimumResultsForSearch: -1,
 			width: '100%'
 		});
 	}
-	
+
 	// tooltip
-	
+
 	$(document).ready(function(){
-		$('[data-bs-toggle="tooltip"]').tooltip();   
+		$('[data-bs-toggle="tooltip"]').tooltip();
 	});
 
 	//feather.replace()
-	
+
 
 	// Home popular mentor slider
 
@@ -195,7 +195,7 @@ Version      : 1.0
 	        			}
 	    		});
     }
-	
+
 	// Feature Instructors
 
 	if($('.owl-carousel.instructors-course').length > 0 ){
@@ -210,15 +210,15 @@ Version      : 1.0
 	            	items: 1
 	          	},
 	          	768 : {
-	            	items: 2
+	            	items: 1.25
 	          	},
 	          	1170: {
-	            	items: 4
+	            	items: 2.5
 	          	}
 	        }
 	    });
     }
-	
+
 	// Latest Blogs
 
 	if($('.owl-carousel.blogs-slide').length > 0 ){
@@ -241,7 +241,7 @@ Version      : 1.0
 	        }
 	    });
     }
-	
+
 	// Login Slide
 
 	if($('.owl-carousel.login-slide').length > 0 ){
@@ -264,15 +264,16 @@ Version      : 1.0
 	        }
 	    });
     }
-	
+
 	// Slick testimonial three
 
-	if($('.mentor-testimonial.lazy').length > 0) {
-		$(".mentor-testimonial.lazy").slick({
-			lazyLoad: 'ondemand',
-			infinite: true
+
+		$(".mentor-testimonial").slick({
+			infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3
 		});
-	}
+
 
 	// Home header
 
@@ -283,9 +284,9 @@ Version      : 1.0
 		if (scroll >= 100) sticky.addClass('add-header-bg');
 		else sticky.removeClass('add-header-bg');
 	});
-	
+
 	// Timer countdown
-	
+
 	if($('.countdown-container').length > 0 ){
 		const daysEl = document.getElementById("days");
 		const hoursEl = document.getElementById("hours");
@@ -317,9 +318,9 @@ Version      : 1.0
 
 		setInterval(countdown, 1000);
 	}
-	
+
 	// Circle Progress Bar
-	
+
 	function animateElements() {
 		$('.circle-bar1').each(function () {
 			var elementPos = $(this).offset().top;
@@ -339,29 +340,29 @@ Version      : 1.0
 				});
 			}
 		});
-	}	
-	
+	}
+
 	if($('.circle-bar').length > 0) {
 		animateElements();
 	}
 	$(window).scroll(animateElements);
-	
+
 	//Otp verfication
-	
+
 	$('.digit-group').find('input').each(function() {
 		$(this).attr('maxlength', 1);
 			$(this).on('keyup', function(e) {
 				var parent = $($(this).parent());
-	
+
 				if(e.keyCode === 8 || e.keyCode === 37) {
 					var prev = parent.find('input#' + $(this).data('previous'));
-					
+
 					if(prev.length) {
 						$(prev).select();
 					}
 				} else if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
 					var next = parent.find('input#' + $(this).data('next'));
-					
+
 					if(next.length) {
 						$(next).select();
 					} else {
@@ -372,7 +373,7 @@ Version      : 1.0
 				}
 			});
 		});
-	
+
 		$('.digit-group input').on('keyup', function(){
 			var self = $(this);
 			if ( self.val() != '' ) {
@@ -392,16 +393,16 @@ Version      : 1.0
 	}
 
 	// Content div min height set
-	
+
 	function resizeInnerDiv() {
-		var height = $(window).height();	
+		var height = $(window).height();
 		var header_height = $(".header").height();
 		var footer_height = $(".footer").height();
 		var setheight = height - header_height;
 		var trueheight = setheight - footer_height;
 		$(".content").css("min-height", trueheight);
 	}
-	
+
 	if($('.content').length > 0 ){
 		resizeInnerDiv();
 	}
@@ -417,7 +418,7 @@ Version      : 1.0
 	$(document).ready(function () {
         let progressVal = 0;
         let businessType = 0;
-      
+
 		$(".next_btn").click(function () {
 			$(this).parent().parent().parent().next().fadeIn('slow');
 			$(this).parent().parent().parent().css({
@@ -433,7 +434,7 @@ Version      : 1.0
 				'display': 'none'
 			});
 			progressVal = progressVal - 1;
-			$('.progress-active').removeClass('progress-active').prev().removeClass('progress-activated').addClass('progress-active'); 
+			$('.progress-active').removeClass('progress-active').prev().removeClass('progress-activated').addClass('progress-active');
 		});
   	});
 
@@ -467,5 +468,5 @@ Version      : 1.0
 			console.error( err.stack );
 		} );
 	}
-	
+
 })(jQuery);
