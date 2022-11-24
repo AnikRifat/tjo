@@ -10,6 +10,8 @@
         <div class="profile-group">
             <div class="profile-name text-center">
                 <h4><a href="student-profile.html">{{ Auth::user()->name }}</a></h4>
+                <p>{{ Auth::user()->email }}</p>
+                <p>{{ Auth::user()->phone }}</p>
                 <p>Student</p>
             </div>
             <div class="go-dashboard text-center">
@@ -30,26 +32,6 @@
             ">
                 <a href="{{ route('user.index') }}" class="nav-link">
                     <i class="feather-settings"></i>My Subscriptions
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a href="setting-student-security.html" class="nav-link">
-                    <i class="feather-user"></i> Security
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="setting-student-social-profile.html" class="nav-link">
-                    <i class="feather-refresh-cw"></i> Purchase History
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="setting-student-notification.html" class="nav-link">
-                    <i class="feather-bell"></i> Notifications
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="login.html" class="nav-link">
-                    <i class="feather-power"></i> Sign Out
                 </a>
             </li>
         </ul>

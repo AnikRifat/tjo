@@ -27,7 +27,7 @@ class PublicController extends Controller
     public function cart($id)
     {
         // dd($id);
-        $item = Course::find($id)->first();
+        $item = Course::find($id);
         // dd($item);
         return view('front.pages.checkout', compact('item'));
     }

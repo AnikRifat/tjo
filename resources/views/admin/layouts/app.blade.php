@@ -7,17 +7,13 @@
         <meta name="author" content="" />
         <meta name="robots" content="" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="csrf-token" content="AbTebka3XxqDQLLNrGqj4zpB9YUjAN7oDilO21Ea">
-        <meta name="description" content="Some description for the page" />
-        <meta property="og:title" content="Zenix - Crypto Laravel Admin Dashboard" />
-        <meta property="og:description" content="Zenix | Dashboard Light" />
-        <meta property="og:image" content="../social-image.png" />
+
         <meta name="format-detection" content="telephone=no">
-        <title>Zenix | Dashboard Light</title>
+        <title>{{ $content->name }} - Dashboard</title>
         <!-- Favicon icon -->
 
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/') }}assets/admin/images/favicon.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ asset('/') }}assets/images/content/{{ $content->logo }}">
 
 
         <link href="{{ asset('/') }}assets/admin/vendor/chartist/css/chartist.min.css" rel="stylesheet"

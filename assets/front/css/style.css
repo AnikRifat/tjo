@@ -2200,8 +2200,9 @@ html.menu-opened body {
 
 .course-inner-content p {
     color: #000;
-    font-size: 16px;
-    margin-bottom: 0
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 0;
 }
 
 .student-course {
@@ -14224,4 +14225,8 @@ img.text-image {
     height: 5rem;
     width: 5rem !important;
     border-radius: 100px;
+}
+
+.skill .course-widget img {
+    height: 3rem;
 }

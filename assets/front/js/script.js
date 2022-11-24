@@ -202,8 +202,9 @@ Version      : 1.0
 		var owl = $('.owl-carousel.instructors-course');
 	      	owl.owlCarousel({
 	        margin: 24,
-	        nav : false,
-	        nav: true,
+	        // nav: true,
+            dots:true,
+            autoplay:true,
 	        loop: true,
 	        responsive: {
 	          	0: {

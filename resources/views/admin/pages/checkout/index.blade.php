@@ -37,14 +37,15 @@
                                     <td>{{ $item->id }}</td>
                                     <td>
 
-
-                                        @if( $item->course->hasLive )
+                                        {{-- {{$item->hasLive->id }} --}}
+                                        @if( $item->hasLive )
                                         Live Course
                                         @else
                                         Reguler Course
                                         @endif
 
                                     </td>
+                                    {{-- {{ dd($item->course) }} --}}
                                     <td>{{ $item->course->course_id }}</td>
                                     <td>{{ $item->course->title }}</td>
                                     <td>{{ $item->user->name }}</td>
@@ -53,14 +54,28 @@
                                     <td>{{ $item->user->phone }}</td>
                                     <td>{{ $item->course->price }}</td>
                                     <td>{{ $item->course->price }}</td>
-                                    <td>not</td>
+                                    <td>
+                                        @if ($item->type == 0)
+                                        <span class="badge light badge-primary">pending</span>
+                                        @elseif ($item->type == 1)
+                                        <span class="badge light badge-success">approved</span>
+                                        @else
+                                        <span class="badge light badge-danger">declined</span>
+                                        @endif
+
+                                    </td>
                                     <td>
                                         <div class="d-flex">
-                                            <a href="{{ route('checkout.show',$item->id) }}"
-                                              class="btn btn-primary shadow btn-xs sharp me-1"><i
-                                                  class="fas fa-eye-alt"></i></a>
+
+                                            <form action="{{ route('checkout.accept',$item->id) }}"
+                                              id="accept{{ $item->id }}" method="get">
+                                                @csrf
+                                            </form>
+                                            <button class="btn btn-success shadow btn-xs sharp"
+                                              onclick="acceptItem({{ $item->id }});"><i
+                                                  class="fa fa-check"></i></button>
                                             <form action="{{ route('checkout.decline',$item->id) }}"
-                                              id="form{{ $item->id }}" method="get">
+                                              id="decline{{ $item->id }}" method="get">
                                                 @csrf
                                             </form>
                                             <button class="btn btn-danger shadow btn-xs sharp"
@@ -114,16 +129,32 @@
     // console.log(id);
 
     Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
+  title: 'Are you sure want to decline this?',
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
+  confirmButtonText: 'Yes, Decline it!'
 }).then((result) => {
   if (result.isConfirmed) {
-    document.getElementById(`form${id}`).submit();
+    document.getElementById(`decline${id}`).submit();
+  }
+})
+
+    }
+    function acceptItem(id) {
+    // console.log(id);
+
+    Swal.fire({
+  title: 'Are you sure want to approved this?',
+  icon: 'info',
+  showCancelButton: true,
+  confirmButtonColor: '#C3E88D',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, accept it it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    document.getElementById(`accept${id}`).submit();
   }
 })
 

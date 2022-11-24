@@ -7,7 +7,7 @@
 
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{ asset('/') }}assets/front/img/logo.png" alt="logo">
+                            <img src="{{ asset('/') }}assets/images/content/{{ $content->logo }}" alt="logo">
                         </div>
                         <div class="footer-about-content">
                             <p>{{ $content->sub_title }}

@@ -83,9 +83,39 @@ class CheckoutController extends Controller
      */
     public function update(Request $request, Checkout $checkout)
     {
-        //
     }
+    /**
+     * decline the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Checkout  $checkout
+     * @return \Illuminate\Http\Response
+     */
+    public function accept(Request $request, Checkout $checkout)
+    {
 
+        if ($checkout->update(['type' => 1])) {
+            return redirect()->route('checkout.index')->with('success', 'checkout approved successfully.');
+        } else {
+            return back()->with('error', 'error.');
+        }
+    }
+    /**
+     * decline the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Checkout  $checkout
+     * @return \Illuminate\Http\Response
+     */
+    public function decline(Request $request, Checkout $checkout)
+    {
+
+        if ($checkout->update(['type' => 2])) {
+            return redirect()->route('checkout.index')->with('success', 'checkout declined successfully.');
+        } else {
+            return back()->with('error', 'error.');
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *

@@ -148,7 +148,7 @@
 
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('/') }}assets/admin/images/profile/pic1.jpg" width="20" alt="" />
+                            <img src="{{ asset('/') }}assets/images/user.jpg" width="20" alt="" />
                             <div class="header-info">
                                 <span>{{ Auth::user()->name }}</span>
                                 <small>Super Admin</small>

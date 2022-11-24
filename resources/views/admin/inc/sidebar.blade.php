@@ -8,11 +8,11 @@
     <div class="deznav-scroll">
         <div class="main-profile">
             <div class="image-bx">
-                <img src="{{ asset('/') }}assets/admin/images/Untitled-1.jpg" alt="">
+                <img src="{{ asset('/') }}assets/images/user.jpg" alt="">
                 <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
             </div>
-            <h5 class="name"><span class="font-w400">Hello,</span> Marquez</h5>
-            <p class="email">marquezzzz@mail.com</p>
+            <h5 class="name"><span class="font-w400">Hello,</span> {{ Auth::user()->name }}</h5>
+            <p class="email">{{ Auth::user()->email }}</p>
         </div>
         <ul class="metismenu" id="menu">
             <li>

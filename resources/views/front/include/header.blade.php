@@ -57,7 +57,7 @@
                     <li class="nav-item user-nav">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="user-img">
-                                <img src="{{ asset('/') }}assets/front/img/user/user11.jpg" alt="">
+                                <img src="{{ asset('/') }}assets/images/user.jpg" alt="">
                                 <span class="status online"></span>
                             </span>
                         </a>
@@ -66,7 +66,7 @@
                             @auth
                             <div class="user-header">
                                 <div class="avatar avatar-sm">
-                                    <img src="{{ asset('/') }}assets/front/img/user/user11.jpg" alt="User Image"
+                                    <img src="{{ asset('/') }}assets/images/user.jpg" alt="User Image"
                                       class="avatar-img rounded-circle">
                                 </div>
                                 <div class="user-text">
@@ -74,7 +74,7 @@
                                     <p class="text-muted mb-0">Student</p>
                                 </div>
                             </div>
-                            <a class="dropdown-item" href="setting-edit-profile.html"><i class="feather-user me-1"></i>
+                            <a class="dropdown-item" href="{{ route('user.index') }}"><i class="feather-user me-1"></i>
                                 Profile</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">

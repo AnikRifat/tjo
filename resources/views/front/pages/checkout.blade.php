@@ -46,13 +46,18 @@
                                                     <div
                                                       class="course-info d-flex align-items-center border-bottom-0 pb-0">
                                                         <div class="rating-img d-flex align-items-center">
-                                                            <img src="assets/img/icon/icon-01.svg" alt="">
-                                                            <p>{{ $item->classes }}</p>
+                                                            <img src="{{ asset('/assets/front') }}/img/icon/icon-01.svg"
+                                                              alt="">
+                                                            <p>{{ $item->classes }} Classes</p>
                                                         </div>
                                                         <div class="course-view d-flex align-items-center">
-                                                            <img src="assets/img/icon/icon-02.svg" alt="">
-                                                            <p>{{ $item->duration }}</p>
+                                                            <img src="{{ asset('/assets/front') }}/img/icon/icon-02.svg"
+                                                              alt="">
+                                                            <p>{{ $item->duration }} Hours</p>
                                                         </div>
+                                                    </div>
+                                                    <div>
+                                                        <p>{{ $item->preview }}</p>
                                                     </div>
                                                 </div>
 
@@ -62,6 +67,7 @@
 
                                 </div>
                             </div>
+                            @if ($item->haslive)
                             <div class="cart-total">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
@@ -79,6 +85,28 @@
                                     </div>
                                 </div>
                             </div>
+                            @else
+                            <div class="cart-total">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="cart-subtotal">
+                                            <p>Payable ammount : $
+                                                {{ $item->price }}<span><input type="text" id="payment_box"
+                                                      class="form-control" value="{{ $item->price }}" readonly
+                                                      hidden></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="check-outs">
+
+                                            <div id="paypal-button-container"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+
                         </div>
                     </div>
                 </div>

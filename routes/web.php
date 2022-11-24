@@ -123,6 +123,8 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::get('/', [CheckoutController::class, 'index'])->name('checkout.index');
 
         Route::get('/show', [CheckoutController::class, 'show'])->name('checkout.show');
+        Route::get('/decline/{checkout}', [CheckoutController::class, 'decline'])->name('checkout.decline');
+        Route::get('/accept/{checkout}', [CheckoutController::class, 'accept'])->name('checkout.accept');
     });
 
     //website-ROutes

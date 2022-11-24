@@ -149,7 +149,7 @@
 
 
 
-    <section class="section master-skill">
+    <section class="section master-skill skill">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-12">
@@ -158,77 +158,80 @@
                             <h2>Master the skills to drive your career</h2>
                         </div>
                     </div>
-                    {{--
-                    <div class="hiw-group aos" data-aos="fade-up">
-                        <div class="row">
-                            <div class="col0-lg-3 col-md-6">
-                                <div class="feature-box text-center ">
-                                    <div class="feature-bg">
-                                        <div class="feature-header">
-                                            <div class="feature-icon">
-                                                <img src="{{ asset('/') }}assets/front/img/proccess/1.png" alt="">
-                </div>
-                <div class="feature-cont">
-                    <div class="feature-text">Get a Schedule</div>
-                </div>
-            </div>
-        </div>
-</div>
-</div>
-<div class="col0-lg-3 col-md-6">
-    <div class="feature-box text-center ">
-        <div class="feature-bg">
-            <div class="feature-header">
-                <div class="feature-icon">
-                    <img src="{{ asset('/') }}assets/front/img/proccess/2.png" alt="">
-                </div>
-                <div class="feature-cont">
-                    <div class="feature-text">Fix a TIme</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col0-lg-3 col-md-6">
-    <div class="feature-box text-center ">
-        <div class="feature-bg">
-            <div class="feature-header">
-                <div class="feature-icon">
-                    <img src="{{ asset('/') }}assets/front/img/proccess/3.png" alt="">
-                </div>
-                <div class="feature-cont">
-                    <div class="feature-text">Make payment</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col0-lg-3 col-md-6">
-    <div class="feature-box text-center ">
-        <div class="feature-bg">
-            <div class="feature-header">
-                <div class="feature-icon">
-                    <img src="{{ asset('/') }}assets/front/img/proccess/4.png" alt="">
-                </div>
-                <div class="feature-cont">
-                    <div class="feature-text">Attend Class</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-</div>
-</div> --}}
-</div>
-<div class="col-lg-5 col-md-12 d-flex align-items-end">
-    <div class="career-img aos" data-aos="fade-up">
-        <img src="{{ asset('/') }}assets/front/img/join.png" alt="" class="img-fluid">
-    </div>
-</div>
-</div>
-</div>
-</section>
+                    <div class="course-widget">
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <div class="course-full-width">
+                                    <div class="blur-border course-radius align-items-center aos aos-init aos-animate"
+                                      data-aos="fade-up">
+                                        <div class="online-course d-flex align-items-center">
+                                            <div class="course-img">
+                                                <img src="{{ asset('/assets/front') }}/img/proccess/1.png" alt="">
+                                            </div>
+                                            <div class="course-inner-content">
+                                                <p>Get a Scedule</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 d-flex">
+                                <div class="course-full-width">
+                                    <div class="blur-border course-radius aos aos-init aos-animate" data-aos="fade-up">
+                                        <div class="online-course d-flex align-items-center">
+                                            <div class="course-img">
+                                                <img src="{{ asset('/assets/front') }}/img/proccess/2.png" alt="">
+                                            </div>
+                                            <div class="course-inner-content">
+                                                <p>Fix a time</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 d-flex">
+                                <div class="course-full-width">
+                                    <div class="blur-border course-radius aos aos-init aos-animate" data-aos="fade-up">
+                                        <div class="online-course d-flex align-items-center">
+                                            <div class="course-img">
+                                                <img src="{{ asset('/assets/front') }}/img/proccess/3.png" alt="">
+                                            </div>
+                                            <div class="course-inner-content">
+                                                <p>make Payment</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 d-flex">
+                                <div class="course-full-width">
+                                    <div class="blur-border course-radius aos aos-init aos-animate" data-aos="fade-up">
+                                        <div class="online-course d-flex align-items-center">
+                                            <div class="course-img">
+                                                <img src="{{ asset('/assets/front') }}/img/proccess/4.png" alt="">
+                                            </div>
+                                            <div class="course-inner-content">
+                                                <p>Attend Class</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 text-center">
+                    <div class="career-img aos" data-aos="fade-up">
+                        <img src="{{ asset('/') }}assets/front/img/join.png" style="
+                        height: 20rem;
+                        /* margin: 0px auto; */
+                    " alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 

@@ -22,4 +22,8 @@ class Checkout extends Model
     {
         return $this->hasOne(Course::class, 'course_id', 'course_id');
     }
+    function hasLive()
+    {
+        return $this->hasOne(Live::class, 'course_id', 'course_id');
+    }
 }

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from dreamslms.dreamguystech.com/html/error-404.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Oct 2022 05:53:57 GMT -->
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Dreams LMS</title>
-
+        <title>{{ $content->name }}</title>
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}assets/front/img/favicon.svg">
 
         <link rel="stylesheet" href="{{ asset('/') }}assets/front/css/bootstrap.min.css">
@@ -26,7 +24,8 @@
             <div class="error-box">
                 <div class="error-logo">
                     <a href="index-2.html">
-                        <img src="{{ asset('/') }}assets/front/img/logo.svg" class="img-fluid" alt="Logo">
+                        <img src="{{ asset('/') }}assets/images/content/{{ $content->logo }}" class="img-fluid"
+                          alt="Logo">
                     </a>
                 </div>
                 <div class="error-box-img">
