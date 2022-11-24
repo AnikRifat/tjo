@@ -46,7 +46,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="overview" class="form-label">overview <b class="text-danger">*</b>:</label>
-                            <textarea name="overview"></textarea>
+                            <textarea name="overview" id="editor"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="duration" class="form-label">Duration <b class="text-danger">*</b>:</label>

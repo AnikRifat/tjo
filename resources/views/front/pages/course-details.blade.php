@@ -96,13 +96,13 @@
                                                         <img class="top-ic"
                                                           src="{{ asset('/') }}assets/front/img/icon/icon-01.svg"
                                                           alt="">
-                                                        <p>{{ $course->classes }}</p>
+                                                        <p>{{ $course->classes }} Classes</p>
                                                     </div>
                                                     <div class="cou-info py-2">
                                                         <img class="top-ic"
                                                           src="{{ asset('/') }}assets/front/img/icon/timer-icon.svg"
                                                           alt="">
-                                                        <p>{{ $course->duration }}</p>
+                                                        <p>{{ $course->duration }} Hours</p>
                                                     </div>
 
                                                 </div>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="col-lg-12">
                             <img src="{{ asset('/') }}assets/images/course/{{ $course->cover_image }}" alt=""
-                              class="img-fluid">
+                              class="img-fluid cover_image w-100">
                         </div>
                         <div class="col-lg-12">
 

@@ -23,12 +23,16 @@
     <div class="settings-menu">
         <h3>ACCOUNT SETTINGS</h3>
         <ul>
-            <li class="nav-item active">
-                <a href="setting-edit-profile.html" class="nav-link">
-                    <i class="feather-settings"></i> Edit Profile
+            <li class="nav-item
+            @if(Route::is('user.index') )
+            active
+            @endif
+            ">
+                <a href="{{ route('user.index') }}" class="nav-link">
+                    <i class="feather-settings"></i>My Subscriptions
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a href="setting-student-security.html" class="nav-link">
                     <i class="feather-user"></i> Security
                 </a>

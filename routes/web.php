@@ -32,6 +32,7 @@ Route::get('/404', [PublicController::class, 'error'])->name('error-access');
 Route::get('/course-details/{course}', [PublicController::class, 'courseDetails'])->name('course.details');
 Route::get('/campaign-details/{campaign}', [PublicController::class, 'campaignDetails'])->name('campaign.details');
 Route::get('/courses/{category}', [PublicController::class, 'categoryCourse'])->name('category.courses');
+Route::get('/courses', [PublicController::class, 'Courses'])->name('courses');
 
 
 Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {

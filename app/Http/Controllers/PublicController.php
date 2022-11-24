@@ -39,6 +39,11 @@ class PublicController extends Controller
         // dd($courses);
         return view('front.pages.courses', compact('catcourses', 'category'));
     }
+    public function courses()
+    {
+        $courses = Course::all();
+        return view('front.pages.coursePage', compact('courses'));
+    }
     /**
      * Display the specified resource.
      *

@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('price')->nullable();
             $table->string('image')->nullable();
             $table->string('cover_image')->nullable();
-            $table->string('preview')->nullable();
+            $table->string('preview',500)->nullable();
             $table->string('intro')->nullable();
-            $table->string('overview')->nullable();
+            $table->longText('overview',10000)->nullable();
             $table->string('duration')->nullable();
             $table->string('classes')->nullable();
             $table->string('category')->nullable();
