@@ -33,6 +33,7 @@
     position: relative;
 ">
         <div class="container">
+            <h1 class="text-center text-light bg-dark py-3">Registration Ends In </h1>
             <div class="countdown-container">
                 <div class="countdown-el days-c">
                     <p class="big-text" id="day"></p>

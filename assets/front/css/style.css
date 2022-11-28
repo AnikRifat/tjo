@@ -14194,6 +14194,7 @@ section.section.about-us {
 img.img-fluid.video-thumb {
     border-radius: 10px;
     height: 5rem;
+    object-fit: contain;
 }
 
 .feature-icon img {

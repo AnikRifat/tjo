@@ -28,9 +28,9 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="thumbnail" class="form-label">thumbnail <b class="text-danger">*</b>:</label>
+                            <label for="banner" class="form-label">Banner <b class="text-danger">*</b>:</label>
                             <canvas id="canv1"></canvas>
-                            <input type="file" class="form-file-input form-control " name="thumbnail"
+                            <input type="file" class="form-file-input form-control " name="banner"
                               placeholder="Type Here ... " multiple="false" accept="image/*" id=finput1
                               onchange="upload()">
                         </div>

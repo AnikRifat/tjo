@@ -205,6 +205,8 @@ Version      : 1.0
 	        // nav: true,
             dots:true,
             autoplay:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true,
 	        loop: true,
 	        responsive: {
 	          	0: {

@@ -21,10 +21,39 @@
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Links</h2>
                         <ul>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Courses</a></li>
-                            <li><a href="">How it works</a></li>
-                            <li><a href="">Testimonial</a></li>
+                            @if(Route::is('index') )
+                            <li>
+                                <a href="{{ url('/') }}">Home</a>
+                            </li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/courses') }}">Courses</a>
+                            </li>
+                            <li>
+                                <a href="#testimonials">Testimonials</a>
+                            </li>
+                            <li>
+                                <a href="#hit">How it Works</a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="{{ url('/') }}">Home</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/') }}/#about">About</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/courses') }}">Courses</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/') }}/#testimonials">Testimonials</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/') }}/#hit">How it Works</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
 
@@ -73,7 +102,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="">
-                            <p class="mb-0">IT Partner: Abaacorp.com.
+                            <p class="mb-0">IT Partner: <a href="https://abaacorp.com/">Abaacorp.com.</a>
+
 
                             </p>
                         </div>

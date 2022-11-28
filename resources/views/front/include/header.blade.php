@@ -26,21 +26,41 @@
                         </a>
                     </div>
                     <ul class="main-nav">
+                        @if(Route::is('index') )
                         <li>
                             <a href="{{ url('/') }}">Home</a>
                         </li>
                         <li>
-                            <a href="{{ url('/') }}">About</a>
+                            <a href="#about">About</a>
                         </li>
                         <li>
                             <a href="{{ url('/courses') }}">Courses</a>
                         </li>
                         <li>
-                            <a href="{{ url('/') }}">How it Works</a>
+                            <a href="#testimonials">Testimonials</a>
                         </li>
                         <li>
-                            <a href="{{ url('/') }}">Testimonials</a>
+                            <a href="#hit">How it Works</a>
                         </li>
+                        @else
+                        <li>
+                            <a href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/') }}/#about">About</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/courses') }}">Courses</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/') }}/#testimonials">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/') }}/#hit">How it Works</a>
+                        </li>
+                        @endif
+
+
                         {{-- <li class="has-submenu">
                             <a href="#">Courses <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">

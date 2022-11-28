@@ -16,7 +16,7 @@
                         <div class="trust-user">
                             <p class="text-small">{{ $content->sub_title }}</p>
                         </div>
-                        <div class="play-buttons">
+                        {{-- <div class="play-buttons">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <a href="https://www.youtube.com/@teacherjackonline75243"
@@ -33,7 +33,7 @@
 
 
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <section class="section about-us">
+    <section class="section about-us" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-12">
@@ -65,7 +65,7 @@
                         <div class="container">
                             <div class="row">
                                 @foreach ($videos as $item)
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 col-md-4 col-6">
                                     @include('front.components.about-video')
                                 </div>
                                 @endforeach
@@ -78,7 +78,7 @@
             </div>
         </div>
     </section>
-    <section class="category">
+    <section class="category" id="courses">
 
         <div class="container">
 
@@ -125,7 +125,7 @@
     </section>
 
     @if($testimonials)
-    <section class="section trend-course">
+    <section class="section trend-course" id="testimonials">
         <div class="container">
             <div class="section-header aos" data-aos="fade-up">
                 <div class="section-sub-head">
@@ -167,7 +167,7 @@
 
 
 
-    <section class="section master-skill skill">
+    <section class="section master-skill skill" id="hit">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-12">
@@ -202,7 +202,7 @@
                                                 <img src="{{ asset('/assets/front') }}/img/proccess/2.png" alt="">
                                             </div>
                                             <div class="course-inner-content">
-                                                <p>Fix a time</p>
+                                                <p>Fix a Time</p>
                                             </div>
                                         </div>
                                     </div>
@@ -216,7 +216,7 @@
                                                 <img src="{{ asset('/assets/front') }}/img/proccess/3.png" alt="">
                                             </div>
                                             <div class="course-inner-content">
-                                                <p>make Payment</p>
+                                                <p>Make Payment</p>
                                             </div>
                                         </div>
                                     </div>
