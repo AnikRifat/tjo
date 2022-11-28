@@ -18,8 +18,8 @@
                                         <th>ID</th>
                                         <th>Course ID</th>
                                         <th>Banner</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
+                                        <th>Class Start Date</th>
+                                        <th>Registration End Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

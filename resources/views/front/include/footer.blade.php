@@ -24,7 +24,7 @@
                             <li><a href="">About</a></li>
                             <li><a href="">Courses</a></li>
                             <li><a href="">How it works</a></li>
-                            <li><a href="">Testimmonial</a></li>
+                            <li><a href="">Testimonial</a></li>
                         </ul>
                     </div>
 
@@ -72,16 +72,15 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="privacy-policy">
-                            <ul>
-                                <li><a href="term-condition.html">Terms</a></li>
-                                <li><a href="privacy-policy.html">Privacy</a></li>
-                            </ul>
+                        <div class="">
+                            <p class="mb-0">IT Partner: Abaacorp.com.
+
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="copyright-text">
-                            <p class="mb-0">© 2022 Abaacorp LTD. All rights reserved.</p>
+                            <p class="mb-0">© 2022 TeacherJackOnline. All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>

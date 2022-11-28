@@ -64,8 +64,11 @@ class PublicController extends Controller
     public function courseDetails(Course $course)
     {
         $islive = Live::where('course_id', $course->course_id)->first();
+        $tdate = date('Y-m-d');
+
+
         // dd($islive);
-        return view('front.pages.course-details', compact('course', 'islive'));
+        return view('front.pages.course-details', compact('course', 'islive', 'tdate'));
     }
     /**
      * Display the specified resource.

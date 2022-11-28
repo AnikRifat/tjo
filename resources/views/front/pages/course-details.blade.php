@@ -22,6 +22,9 @@
     </div>
 
     @if ($islive)
+
+    @if ( $islive->end_date >= $tdate )
+
     <div class="inner-banner" style="
     padding: 45px 0;
     background: url({{ asset('/assets/images') }}/course/{{ $islive->banner }});
@@ -53,7 +56,7 @@
 
         </div>
     </div>
-
+    @endif
     {{-- @else --}}
 
     @endif

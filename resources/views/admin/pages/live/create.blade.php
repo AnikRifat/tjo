@@ -9,7 +9,7 @@
                 <div class="basic-form">
                     <form action="{{ route('live.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                    
+
                         <div class="mb-3">
                             <label class="me-sm-2">Course <b class="text-danger">*</b>:</label>
                             <select class="me-sm-2 default-select form-control wide" name="course_id"
@@ -30,12 +30,14 @@
                               onchange="upload()">
                         </div>
                         <div class="mb-3">
-                            <label for="start_date" class="form-label">start_date <b class="text-danger">*</b>:</label>
+                            <label for="start_date" class="form-label">Class Start Date <b
+                                  class="text-danger">*</b>:</label>
                             <<input type="date" name="start_date" class="datepicker-default form-control"
                               id="start_date">
                         </div>
                         <div class="mb-3">
-                            <label for="end_date" class="form-label">end_date <b class="text-danger">*</b>:</label>
+                            <label for="end_date" class="form-label">Registration End Date <b
+                                  class="text-danger">*</b>:</label>
                             <input type="date" name="end_date" class="datepicker-default form-control" id="end_date">
                         </div>
                         <button type="submit" class="btn btn-primary">

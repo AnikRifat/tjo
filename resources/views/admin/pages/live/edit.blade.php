@@ -36,12 +36,14 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="start_date" class="form-label">start_date <b class="text-danger">*</b>:</label>
+                            <label for="start_date" class="form-label">Class Start Date <b
+                                  class="text-danger">*</b>:</label>
                             <input type="date" name="start_date" class="datepicker-default form-control" id="start_date"
                               value="{{ $live->start_date }}">
                         </div>
                         <div class="mb-3">
-                            <label for="end_date" class="form-label">end_date <b class="text-danger">*</b>:</label>
+                            <label for="end_date" class="form-label">Registration End Date <b
+                                  class="text-danger">*</b>:</label>
                             <input type="date" name="end_date" class="datepicker-default form-control" id="end_date"
                               value="{{ $live->end_date }}">
                         </div>

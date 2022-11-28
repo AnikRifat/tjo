@@ -16,6 +16,24 @@
                         <div class="trust-user">
                             <p class="text-small">{{ $content->sub_title }}</p>
                         </div>
+                        <div class="play-buttons">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <a href="https://www.youtube.com/@teacherjackonline75243"
+                                      class="btn btn-block btn-danger btn-lg">
+                                        <i class="fa-brands mr-2 fa-youtube"></i> Youtube
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <a href="https://www.facebook.com/TeacherJackOnline"
+                                      class="btn btn-block btn-dark btn-lg">
+                                        <i class="fa-brands mr-2 fa-facebook"></i> Facebook
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
@@ -71,7 +89,7 @@
         <div class="container">
             <div class="section-header aos aos-init aos-animate" data-aos="fade-up">
                 <div class="section-sub-head ">
-                    <h2 class="text-center">Courses You can Buy</h2>
+                    <h2 class="text-center">Packages</h2>
                 </div>
             </div>
             <div class="course-widget">
@@ -111,7 +129,7 @@
         <div class="container">
             <div class="section-header aos" data-aos="fade-up">
                 <div class="section-sub-head">
-                    <h2>Users Who Love Us</h2>
+                    <h2>What Students Say About Me</h2>
                 </div>
 
             </div>
@@ -155,22 +173,22 @@
                 <div class="col-lg-7 col-md-12">
                     <div class="section-header aos" data-aos="fade-up">
                         <div class="section-sub-head">
-                            <h2>Master the skills to drive your career</h2>
+                            <h2>Steps for Success</h2>
                         </div>
                     </div>
 
-                    <div class="course-widget">
+                    <div class="course-widget ">
                         <div class="row">
-                            <div class="col-lg-6 col-12">
+                            <div class="col-lg-12 col-12">
                                 <div class="course-full-width">
                                     <div class="blur-border course-radius align-items-center aos aos-init aos-animate"
                                       data-aos="fade-up">
-                                        <div class="online-course d-flex align-items-center">
+                                        <div class="online-course d-flex align-items-center justify-content-center">
                                             <div class="course-img">
                                                 <img src="{{ asset('/assets/front') }}/img/proccess/1.png" alt="">
                                             </div>
                                             <div class="course-inner-content">
-                                                <p>Get a Scedule</p>
+                                                <p>Get a Schedule</p>
                                             </div>
                                         </div>
                                     </div>
@@ -204,10 +222,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-12 d-flex">
+                            <div class="col-lg-12 col-12 d-flex">
                                 <div class="course-full-width">
                                     <div class="blur-border course-radius aos aos-init aos-animate" data-aos="fade-up">
-                                        <div class="online-course d-flex align-items-center">
+                                        <div class="online-course d-flex align-items-center justify-content-center">
                                             <div class="course-img">
                                                 <img src="{{ asset('/assets/front') }}/img/proccess/4.png" alt="">
                                             </div>

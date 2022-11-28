@@ -179,6 +179,7 @@
         </script> --}}
         <script>
             var editor1 = new RichTextEditor("#editor");
+            var editor2 = new RichTextEditor("#editor2");
         </script>
         {{-- <script>
             ClassicEditor
