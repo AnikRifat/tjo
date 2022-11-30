@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Campaign;
 use App\Models\Category;
 use App\Models\Course;
@@ -31,6 +32,13 @@ class PublicController extends Controller
         // dd($item);
         return view('front.pages.checkout', compact('item'));
     }
+    public function bookCart($id)
+    {
+        // dd($id);
+        $item = Book::find($id);
+        // dd($item);
+        return view('front.pages.book-cart', compact('item'));
+    }
     public function categoryCourse($id)
     {
         $category = Category::find($id);
@@ -43,6 +51,11 @@ class PublicController extends Controller
     {
         $courses = Course::all();
         return view('front.pages.coursePage', compact('courses'));
+    }
+    public function books()
+    {
+        $books = Book::all();
+        return view('front.pages.books', compact('books'));
     }
     /**
      * Display the specified resource.

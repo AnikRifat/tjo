@@ -51,6 +51,26 @@ class CheckoutController extends Controller
             return back()->with('error', 'error.');
         }
     }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function bookStore(Request $request)
+    {
+        //  dd($request->all());
+        $request->validate([
+            "course_id" => 'required',
+            "user_id" => 'required',
+        ]);
+        $input = $request->all();
+        if (Checkout::create($input)) {
+            return view('front.pages.checkout-success');
+        } else {
+            return back()->with('error', 'error.');
+        }
+    }
 
     /**
      * Display the specified resource.

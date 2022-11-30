@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
@@ -33,6 +34,7 @@ Route::get('/course-details/{course}', [PublicController::class, 'courseDetails'
 Route::get('/campaign-details/{campaign}', [PublicController::class, 'campaignDetails'])->name('campaign.details');
 Route::get('/courses/{category}', [PublicController::class, 'categoryCourse'])->name('category.courses');
 Route::get('/courses', [PublicController::class, 'Courses'])->name('courses');
+Route::get('/books', [PublicController::class, 'books'])->name('books');
 
 
 Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {
@@ -42,11 +44,14 @@ Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {
     Route::get('/request/{checkout}', [CheckoutController::class, 'request'])->name('checkout.request');
     Route::post('/payment', [PaymentController::class, 'pay'])->name('payment');
     Route::get('/cart/{course}', [PublicController::class, 'cart'])->name('cart');
+    Route::get('/book-cart/{book}', [PublicController::class, 'bookCart'])->name('book-cart');
+    Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
+    Route::post('/book/store', [CheckoutController::class, 'store'])->name('book.store');
 });
 
 
 
-Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
+
 
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     // Route::prefix('admin')->group(function () {
@@ -94,7 +99,16 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::put('/update/{testimonial}', [TestimonialController::class, 'update'])->name('testimonial.update');
         Route::get('/destroy/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     });
+    //book-ROutes
 
+    Route::prefix('book')->group(function () {
+        Route::get('/', [BookController::class, 'index'])->name('book.index');
+        Route::get('/create', [BookController::class, 'create'])->name('book.create');
+        Route::post('/store', [BookController::class, 'store'])->name('book.store');
+        Route::get('/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
+        Route::put('/update/{book}', [BookController::class, 'update'])->name('book.update');
+        Route::get('/destroy/{book}', [BookController::class, 'destroy'])->name('book.destroy');
+    });
     //category-ROutes
 
     Route::prefix('category')->group(function () {

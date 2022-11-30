@@ -34,7 +34,7 @@
                             <a href="#about">About</a>
                         </li>
                         <li>
-                            <a href="{{ url('/courses') }}">Courses</a>
+                            <a href="#courses">Packages</a>
                         </li>
                         <li>
                             <a href="#testimonials">Testimonials</a>
@@ -50,7 +50,7 @@
                             <a href="{{ url('/') }}/#about">About</a>
                         </li>
                         <li>
-                            <a href="{{ url('/courses') }}">Courses</a>
+                            <a href="{{ url('/') }}/#courses}">Packages</a>
                         </li>
                         <li>
                             <a href="{{ url('/') }}/#testimonials">Testimonials</a>

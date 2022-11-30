@@ -78,14 +78,9 @@
             </div>
         </div>
     </section>
-    <section class="category" id="courses">
 
-        <div class="container">
 
-        </div>
-    </section>
-
-    <section class="section trend-course">
+    <section class="section trend-course" id="courses">
         <div class="container">
             <div class="section-header aos aos-init aos-animate" data-aos="fade-up">
                 <div class="section-sub-head ">
@@ -95,11 +90,29 @@
             <div class="course-widget">
                 <div class="row">
                     @foreach ($categories as $item)
-                    <div class="col-md-4">
+                    <div class="col-lg-3 col-md-6 col-12">
                         @include('front.components.category-card')
                     </div>
                     @endforeach
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="{{ route('books') }}">
+                            <div class="feature-box text-center ">
+                                <div class="feature-bg">
+                                    <div class="feature-header">
+                                        <div class="feature-cont">
+                                            <div class="feature-text">Book</div>
+                                        </div>
+                                        <div class="feature-icon">
+                                            <img src="{{ asset('/') }}assets/images/category/book.jpg" alt="">
+                                        </div>
 
+                                    </div>
+                                    {{-- <p>45 Instructors</p> --}}
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
                 </div>
             </div>
             {{--
@@ -125,7 +138,7 @@
     </section>
 
     @if($testimonials)
-    <section class="section trend-course" id="testimonials">
+    <section class="section trend-course v2" id="testimonials">
         <div class="container">
             <div class="section-header aos" data-aos="fade-up">
                 <div class="section-sub-head">
