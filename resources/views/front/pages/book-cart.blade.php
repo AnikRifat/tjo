@@ -82,9 +82,9 @@
             </div>
         </div>
         @auth
-        <form action="{{ route('checkout.store') }}" id="checkout" method="post">
+        <form action="{{ route('bookCheckout.store') }}" id="checkout" method="post">
             @csrf
-            <input type="hidden" name="book_id" value="book-{{ $item->book_id }}">
+            <input type="hidden" name="book_id" value="{{ $item->id }}">
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
         </form>
         @endauth
@@ -94,7 +94,7 @@
 @endsection
 @section('script')
 <script
-  src="https://www.paypal.com/sdk/js?client-id=AV4kba7dUEZTPqNYt06sKoeBKzokMtzfNLFwV92NluMXln3ttMs6_CTuqjq-SylMFvOKOU_Z05_x9v95&currency=USD">
+  src="https://www.paypal.com/sdk/js?client-id=AdemfddwdPxaI8XdXZqPK5dKX1wzM3-PkDzVT1Or9kbu6c7LfAvJ9pqPVM0xxOOZaFCyH00uFlNFxvK5&currency=USD">
 </script>
 <script>
     paypal.Buttons({

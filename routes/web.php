@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\bookCheckoutController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CategoryController;
@@ -36,17 +37,16 @@ Route::get('/courses/{category}', [PublicController::class, 'categoryCourse'])->
 Route::get('/courses', [PublicController::class, 'Courses'])->name('courses');
 Route::get('/books', [PublicController::class, 'books'])->name('books');
 
+Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::post('/bookstore', [bookCheckoutController::class, 'store'])->name('bookCheckout.store');
+
 
 Route::prefix('dashboard')->middleware('auth', 'isUser')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('user.index');
-
-
     Route::get('/request/{checkout}', [CheckoutController::class, 'request'])->name('checkout.request');
     Route::post('/payment', [PaymentController::class, 'pay'])->name('payment');
     Route::get('/cart/{course}', [PublicController::class, 'cart'])->name('cart');
     Route::get('/book-cart/{book}', [PublicController::class, 'bookCart'])->name('book-cart');
-    Route::post('/store', [CheckoutController::class, 'store'])->name('checkout.store');
-    Route::post('/book/store', [CheckoutController::class, 'store'])->name('book.store');
 });
 
 
@@ -140,7 +140,15 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         Route::get('/decline/{checkout}', [CheckoutController::class, 'decline'])->name('checkout.decline');
         Route::get('/accept/{checkout}', [CheckoutController::class, 'accept'])->name('checkout.accept');
     });
+    //bookcheckout-ROutes
 
+    Route::prefix('bookcheckout')->group(function () {
+        Route::get('/', [bookCheckoutController::class, 'index'])->name('bookcheckout.index');
+
+        Route::get('/show', [bookCheckoutController::class, 'show'])->name('bookcheckout.show');
+        Route::get('/decline/{bookcheckout}', [bookCheckoutController::class, 'decline'])->name('bookcheckout.decline');
+        Route::get('/accept/{bookcheckout}', [bookCheckoutController::class, 'accept'])->name('bookcheckout.accept');
+    });
     //website-ROutes
 
     Route::prefix('website')->group(function () {

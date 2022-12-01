@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Checkout;
+use App\Models\BookCheckout;
 use Illuminate\Http\Request;
 
-class CheckoutController extends Controller
+class bookCheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,11 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        $checkouts = Checkout::all();
+        $bookCheckouts = BookCheckout::all();
 
-        // $user = User::where('id', $checkouts->user_id)->get();
-        // $course = Course::where('id', $checkouts->course_id)->get();
-        return view('admin.pages.checkout.index', compact('checkouts'));
+        // $user = User::where('id', $bookCheckouts->user_id)->get();
+        // $book = book::where('id', $bookCheckouts->book_id)->get();
+        return view('admin.pages.bookCheckout.index', compact('bookCheckouts'));
     }
 
     /**
@@ -39,14 +39,14 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //  dd($request->all());
+        // dd($request->all());
         $request->validate([
-            "course_id" => 'required',
+            "book_id" => 'required',
             "user_id" => 'required',
         ]);
         $input = $request->all();
-        if (Checkout::create($input)) {
-            return view('front.pages.checkout-success');
+        if (bookCheckout::create($input)) {
+            return view('front.pages.bookCheckout-success');
         } else {
             return back()->with('error', 'error.');
         }
@@ -62,10 +62,10 @@ class CheckoutController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Checkout  $checkout
+     * @param  \App\Models\bookCheckout  $bookCheckout
      * @return \Illuminate\Http\Response
      */
-    public function show(Checkout $checkout)
+    public function show(bookCheckout $bookCheckout)
     {
         //
     }
@@ -73,36 +73,36 @@ class CheckoutController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Checkout  $checkout
+     * @param  \App\Models\bookCheckout  $bookCheckout
      * @return \Illuminate\Http\Response
      */
-    public function request(Checkout $checkout)
+    public function request(bookCheckout $bookCheckout)
     {
-        return view('front.pages.chekout', compact('checkout'));
+        return view('front.pages.chekout', compact('bookCheckout'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Checkout  $checkout
+     * @param  \App\Models\bookCheckout  $bookCheckout
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Checkout $checkout)
+    public function update(Request $request, bookCheckout $bookCheckout)
     {
     }
     /**
      * decline the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Checkout  $checkout
+     * @param  \App\Models\bookCheckout  $bookCheckout
      * @return \Illuminate\Http\Response
      */
-    public function accept(Request $request, Checkout $checkout)
+    public function accept(Request $request, bookCheckout $bookCheckout)
     {
 
-        if ($checkout->update(['type' => 1])) {
-            return redirect()->route('checkout.index')->with('success', 'checkout approved successfully.');
+        if ($bookCheckout->update(['type' => 1])) {
+            return redirect()->route('bookCheckout.index')->with('success', 'bookCheckout approved successfully.');
         } else {
             return back()->with('error', 'error.');
         }
@@ -111,14 +111,14 @@ class CheckoutController extends Controller
      * decline the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Checkout  $checkout
+     * @param  \App\Models\bookCheckout  $bookCheckout
      * @return \Illuminate\Http\Response
      */
-    public function decline(Request $request, Checkout $checkout)
+    public function decline(Request $request, bookCheckout $bookCheckout)
     {
 
-        if ($checkout->update(['type' => 2])) {
-            return redirect()->route('checkout.index')->with('success', 'checkout declined successfully.');
+        if ($bookCheckout->update(['type' => 2])) {
+            return redirect()->route('bookCheckout.index')->with('success', 'bookCheckout declined successfully.');
         } else {
             return back()->with('error', 'error.');
         }
@@ -126,10 +126,10 @@ class CheckoutController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Checkout  $checkout
+     * @param  \App\Models\bookCheckout  $bookCheckout
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Checkout $checkout)
+    public function destroy(bookCheckout $bookCheckout)
     {
         //
     }

@@ -37,11 +37,12 @@
                             <a href="#courses">Packages</a>
                         </li>
                         <li>
-                            <a href="#testimonials">Testimonials</a>
-                        </li>
-                        <li>
                             <a href="#hit">How it Works</a>
                         </li>
+                        <li>
+                            <a href="#testimonials">Testimonials</a>
+                        </li>
+
                         @else
                         <li>
                             <a href="{{ url('/') }}">Home</a>
@@ -53,11 +54,12 @@
                             <a href="{{ url('/') }}/#courses}">Packages</a>
                         </li>
                         <li>
-                            <a href="{{ url('/') }}/#testimonials">Testimonials</a>
-                        </li>
-                        <li>
                             <a href="{{ url('/') }}/#hit">How it Works</a>
                         </li>
+                        <li>
+                            <a href="{{ url('/') }}/#testimonials">Testimonials</a>
+                        </li>
+
                         @endif
 
 
